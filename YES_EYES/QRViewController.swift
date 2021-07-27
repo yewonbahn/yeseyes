@@ -27,7 +27,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     var model = [[QRModel]]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        model[section].count
+        return model[section].count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
