@@ -10,11 +10,8 @@ class HelpCell: UITableViewCell{
     
     @IBOutlet weak var topLabel: UILabel!
     
-    @IBOutlet weak var centerImageView: UIImageView! {
-        didSet{
-            centerImageView.image = UIImage.init(systemName: "chevron.right")
-        }
-    }
+    @IBOutlet weak var centerImageView: UIImageView! 
+      
     @IBOutlet weak var bottomLabel: UILabel!
 }
 struct HelpModel{
