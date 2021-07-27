@@ -52,7 +52,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             
             QRVC
         }
+        
+        if indexPath.section == 1 && indexPath.row == 2{
+            if let HelpVC = UIStoryboard(name: "HelpViewController", bundle: nil).instantiateViewController(identifier: "HelpViewController") as? HelpViewController{
+                self.navigationController?.pushViewController(HelpVC, animated: true)
+            }
+          
+        }
+
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

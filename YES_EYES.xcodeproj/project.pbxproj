@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8473A8A726B02E8C008B16E7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473A8A626B02E8C008B16E7 /* HelpViewController.swift */; };
+		8473A8AC26B02EB6008B16E7 /* HelpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */; };
 		F505379826AD93590012085F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505379726AD93590012085F /* QRViewController.swift */; };
 		F505379A26AD93750012085F /* QRViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505379926AD93750012085F /* QRViewController.storyboard */; };
 		F526781926AC3947005152C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526781826AC3947005152C4 /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8473A8A626B02E8C008B16E7 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpViewController.storyboard; sourceTree = "<group>"; };
 		F505379726AD93590012085F /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		F505379926AD93750012085F /* QRViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRViewController.storyboard; sourceTree = "<group>"; };
 		F526781526AC3947005152C4 /* YES_EYES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YES_EYES.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,8 +119,10 @@
 				F526781E26AC3947005152C4 /* Main.storyboard */,
 				F526781C26AC3947005152C4 /* ViewController.swift */,
 				F526784D26AC3FAD005152C4 /* MenuCell.xib */,
+				8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */,
 				F526784C26AC3FAD005152C4 /* MenuCell.swift */,
 				F526785026AC43AD005152C4 /* SettingModel.swift */,
+				8473A8A626B02E8C008B16E7 /* HelpViewController.swift */,
 				F505379926AD93750012085F /* QRViewController.storyboard */,
 				F505379726AD93590012085F /* QRViewController.swift */,
 				F526782126AC3949005152C4 /* Assets.xcassets */,
@@ -248,6 +254,7 @@
 			files = (
 				F526782526AC3949005152C4 /* LaunchScreen.storyboard in Resources */,
 				F505379A26AD93750012085F /* QRViewController.storyboard in Resources */,
+				8473A8AC26B02EB6008B16E7 /* HelpViewController.storyboard in Resources */,
 				F526782226AC3949005152C4 /* Assets.xcassets in Resources */,
 				F526784F26AC3FAD005152C4 /* MenuCell.xib in Resources */,
 				F526782026AC3947005152C4 /* Main.storyboard in Resources */,
@@ -275,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8473A8A726B02E8C008B16E7 /* HelpViewController.swift in Sources */,
 				F526785126AC43AD005152C4 /* SettingModel.swift in Sources */,
 				F526781D26AC3947005152C4 /* ViewController.swift in Sources */,
 				F526781926AC3947005152C4 /* AppDelegate.swift in Sources */,
@@ -458,6 +466,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YES_EYES/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,6 +485,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YES_EYES/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
