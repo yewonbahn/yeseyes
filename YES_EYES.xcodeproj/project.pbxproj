@@ -11,6 +11,8 @@
 		84A530C326B164EB0002B7F1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A530C026B164EB0002B7F1 /* HelpViewController.swift */; };
 		84A530C426B164EB0002B7F1 /* HelpViewController2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A530C126B164EB0002B7F1 /* HelpViewController2.storyboard */; };
 		84A530C526B164EB0002B7F1 /* HelpViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A530C226B164EB0002B7F1 /* HelpViewController2.swift */; };
+		84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A530CC26B1675A0002B7F1 /* HelpViewController3.swift */; };
+		84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */; };
 		F505379826AD93590012085F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505379726AD93590012085F /* QRViewController.swift */; };
 		F505379A26AD93750012085F /* QRViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505379926AD93750012085F /* QRViewController.storyboard */; };
 		F526781926AC3947005152C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526781826AC3947005152C4 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 		84A530C026B164EB0002B7F1 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = ../../Downloads/HelpViewController.swift; sourceTree = "<group>"; };
 		84A530C126B164EB0002B7F1 /* HelpViewController2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = HelpViewController2.storyboard; path = ../../Downloads/HelpViewController2.storyboard; sourceTree = "<group>"; };
 		84A530C226B164EB0002B7F1 /* HelpViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController2.swift; path = ../../Downloads/HelpViewController2.swift; sourceTree = "<group>"; };
+		84A530CC26B1675A0002B7F1 /* HelpViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController3.swift; sourceTree = "<group>"; };
+		84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpViewController3.storyboard; sourceTree = "<group>"; };
 		F505379726AD93590012085F /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		F505379926AD93750012085F /* QRViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRViewController.storyboard; sourceTree = "<group>"; };
 		F526781526AC3947005152C4 /* YES_EYES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YES_EYES.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,7 @@
 				F526781C26AC3947005152C4 /* ViewController.swift */,
 				F526784D26AC3FAD005152C4 /* MenuCell.xib */,
 				8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */,
+				84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */,
 				F526784C26AC3FAD005152C4 /* MenuCell.swift */,
 				F526785026AC43AD005152C4 /* SettingModel.swift */,
 				84A530C026B164EB0002B7F1 /* HelpViewController.swift */,
@@ -139,6 +144,7 @@
 				84A530C226B164EB0002B7F1 /* HelpViewController2.swift */,
 				F505379926AD93750012085F /* QRViewController.storyboard */,
 				F505379726AD93590012085F /* QRViewController.swift */,
+				84A530CC26B1675A0002B7F1 /* HelpViewController3.swift */,
 				F5B6687B26AF2DF4008AE203 /* StoreViewController.storyboard */,
 				F5B6687926AF2DE3008AE203 /* StoreViewController.swift */,
 				F5B6687F26AF3773008AE203 /* AIViewController.storyboard */,
@@ -278,6 +284,7 @@
 				84A530C426B164EB0002B7F1 /* HelpViewController2.storyboard in Resources */,
 				F526784F26AC3FAD005152C4 /* MenuCell.xib in Resources */,
 				F5B6688026AF3773008AE203 /* AIViewController.storyboard in Resources */,
+				84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */,
 				F526782026AC3947005152C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F526785126AC43AD005152C4 /* SettingModel.swift in Sources */,
+				84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */,
 				F526781D26AC3947005152C4 /* ViewController.swift in Sources */,
 				F5B6687E26AF3759008AE203 /* AIViewController.swift in Sources */,
 				F526781926AC3947005152C4 /* AppDelegate.swift in Sources */,
