@@ -29,10 +29,17 @@ class HelpViewController2: UIViewController, UITableViewDelegate, UITableViewDat
         cell.bottomLabel.text = model[indexPath.section].bottomlabel
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0{
+            if let HelpVC3 = UIStoryboard(name: "HelpViewController3", bundle: nil).instantiateViewController(identifier: "HelpViewController3") as? HelpViewController3{
+                self.navigationController?.pushViewController(HelpVC3, animated: true)
+            }
+          
+        }
 
+    }
    
     @IBOutlet weak var helpTableView2: UITableView!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -40,7 +47,7 @@ class HelpViewController2: UIViewController, UITableViewDelegate, UITableViewDat
         helpTableView2.dataSource = self
        
 
-        model.append(HelpModel2(mainTitle: "메인화면 전환 안내",bottomlabel: "상품을 클릭하여주세요"))
+        model.append(HelpModel2(mainTitle: "위시리스트에 상품 추가/삭제",bottomlabel: "화면을 더블클릭해주세요"))
         
        
     }
