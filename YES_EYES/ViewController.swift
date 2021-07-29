@@ -61,19 +61,23 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             if let StoreVC = UIStoryboard(name: "StoreViewController", bundle: nil).instantiateViewController(identifier: "StoreViewController") as? StoreViewController{
                 self.navigationController?.pushViewController(StoreVC, animated: true)
             }
-            if indexPath.section == 0 && indexPath.row == 0{
-                if let CUVC = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUViewController{
-                    self.navigationController?.pushViewController(CUVC, animated: true)
-            }
-            }
-            }
+        }
         
         else if indexPath.section == 1 && indexPath.row == 1{
             if let AIVC = UIStoryboard(name: "AIViewController", bundle: nil).instantiateViewController(identifier: "AIViewController") as? AIViewController{
                 self.navigationController?.pushViewController(AIVC, animated: true)
             }
         }
+        
+        if indexPath.section == 1 && indexPath.row == 2{
+            if let HelpVC = UIStoryboard(name: "HelpViewController", bundle: nil).instantiateViewController(identifier: "HelpViewController") as? HelpViewController{
+                self.navigationController?.pushViewController(HelpVC, animated: true)
+            }
+          
+        }
+
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

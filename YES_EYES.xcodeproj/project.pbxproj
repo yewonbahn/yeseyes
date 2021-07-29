@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8473A8AC26B02EB6008B16E7 /* HelpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */; };
+		84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A530CC26B1675A0002B7F1 /* HelpViewController3.swift */; };
+		84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */; };
 		F505379826AD93590012085F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505379726AD93590012085F /* QRViewController.swift */; };
 		F505379A26AD93750012085F /* QRViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505379926AD93750012085F /* QRViewController.storyboard */; };
+		F519FD3F26B2F46F00660432 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519FD3E26B2F46F00660432 /* HelpViewController.swift */; };
+		F519FD4126B2F49700660432 /* HelpViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519FD4026B2F49700660432 /* HelpViewController2.swift */; };
+		F519FD4326B2F4D100660432 /* HelpViewController2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F519FD4226B2F4D100660432 /* HelpViewController2.storyboard */; };
+		F519FD4526B2F58300660432 /* CUViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F519FD4426B2F58300660432 /* CUViewController.storyboard */; };
+		F519FD4726B2F5B700660432 /* CUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519FD4626B2F5B700660432 /* CUViewController.swift */; };
 		F526781926AC3947005152C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526781826AC3947005152C4 /* AppDelegate.swift */; };
 		F526781B26AC3947005152C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526781A26AC3947005152C4 /* SceneDelegate.swift */; };
 		F526781D26AC3947005152C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526781C26AC3947005152C4 /* ViewController.swift */; };
@@ -20,8 +28,6 @@
 		F526784E26AC3FAD005152C4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526784C26AC3FAD005152C4 /* MenuCell.swift */; };
 		F526784F26AC3FAD005152C4 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F526784D26AC3FAD005152C4 /* MenuCell.xib */; };
 		F526785126AC43AD005152C4 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526785026AC43AD005152C4 /* SettingModel.swift */; };
-		F5885D7026B1D621005BCD98 /* CUViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5885D6F26B1D621005BCD98 /* CUViewController.storyboard */; };
-		F5885D7226B1D63D005BCD98 /* CUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5885D7126B1D63D005BCD98 /* CUViewController.swift */; };
 		F5B6687A26AF2DE3008AE203 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6687926AF2DE3008AE203 /* StoreViewController.swift */; };
 		F5B6687C26AF2DF4008AE203 /* StoreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B6687B26AF2DF4008AE203 /* StoreViewController.storyboard */; };
 		F5B6687E26AF3759008AE203 /* AIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B6687D26AF3759008AE203 /* AIViewController.swift */; };
@@ -46,8 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpViewController.storyboard; sourceTree = "<group>"; };
+		84A530CC26B1675A0002B7F1 /* HelpViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController3.swift; sourceTree = "<group>"; };
+		84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpViewController3.storyboard; sourceTree = "<group>"; };
 		F505379726AD93590012085F /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		F505379926AD93750012085F /* QRViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRViewController.storyboard; sourceTree = "<group>"; };
+		F519FD3E26B2F46F00660432 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		F519FD4026B2F49700660432 /* HelpViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController2.swift; sourceTree = "<group>"; };
+		F519FD4226B2F4D100660432 /* HelpViewController2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpViewController2.storyboard; sourceTree = "<group>"; };
+		F519FD4426B2F58300660432 /* CUViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CUViewController.storyboard; sourceTree = "<group>"; };
+		F519FD4626B2F5B700660432 /* CUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUViewController.swift; sourceTree = "<group>"; };
 		F526781526AC3947005152C4 /* YES_EYES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YES_EYES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F526781826AC3947005152C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F526781A26AC3947005152C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,8 +79,6 @@
 		F526784C26AC3FAD005152C4 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		F526784D26AC3FAD005152C4 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		F526785026AC43AD005152C4 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
-		F5885D6F26B1D621005BCD98 /* CUViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CUViewController.storyboard; sourceTree = "<group>"; };
-		F5885D7126B1D63D005BCD98 /* CUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUViewController.swift; sourceTree = "<group>"; };
 		F5B6687926AF2DE3008AE203 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		F5B6687B26AF2DF4008AE203 /* StoreViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreViewController.storyboard; sourceTree = "<group>"; };
 		F5B6687D26AF3759008AE203 /* AIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIViewController.swift; sourceTree = "<group>"; };
@@ -133,10 +145,16 @@
 				F505379726AD93590012085F /* QRViewController.swift */,
 				F5B6687B26AF2DF4008AE203 /* StoreViewController.storyboard */,
 				F5B6687926AF2DE3008AE203 /* StoreViewController.swift */,
-				F5885D6F26B1D621005BCD98 /* CUViewController.storyboard */,
-				F5885D7126B1D63D005BCD98 /* CUViewController.swift */,
+				F519FD4426B2F58300660432 /* CUViewController.storyboard */,
+				F519FD4626B2F5B700660432 /* CUViewController.swift */,
 				F5B6687F26AF3773008AE203 /* AIViewController.storyboard */,
 				F5B6687D26AF3759008AE203 /* AIViewController.swift */,
+				8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */,
+				F519FD3E26B2F46F00660432 /* HelpViewController.swift */,
+				F519FD4226B2F4D100660432 /* HelpViewController2.storyboard */,
+				F519FD4026B2F49700660432 /* HelpViewController2.swift */,
+				84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */,
+				84A530CC26B1675A0002B7F1 /* HelpViewController3.swift */,
 				F526782126AC3949005152C4 /* Assets.xcassets */,
 				F526782626AC3949005152C4 /* Info.plist */,
 			);
@@ -265,12 +283,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F526782526AC3949005152C4 /* LaunchScreen.storyboard in Resources */,
-				F5885D7026B1D621005BCD98 /* CUViewController.storyboard in Resources */,
 				F505379A26AD93750012085F /* QRViewController.storyboard in Resources */,
+				8473A8AC26B02EB6008B16E7 /* HelpViewController.storyboard in Resources */,
 				F526782226AC3949005152C4 /* Assets.xcassets in Resources */,
 				F5B6687C26AF2DF4008AE203 /* StoreViewController.storyboard in Resources */,
+				F519FD4326B2F4D100660432 /* HelpViewController2.storyboard in Resources */,
+				F519FD4526B2F58300660432 /* CUViewController.storyboard in Resources */,
 				F526784F26AC3FAD005152C4 /* MenuCell.xib in Resources */,
 				F5B6688026AF3773008AE203 /* AIViewController.storyboard in Resources */,
+				84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */,
 				F526782026AC3947005152C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,13 +317,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F519FD4726B2F5B700660432 /* CUViewController.swift in Sources */,
 				F526785126AC43AD005152C4 /* SettingModel.swift in Sources */,
+				84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */,
 				F526781D26AC3947005152C4 /* ViewController.swift in Sources */,
 				F5B6687E26AF3759008AE203 /* AIViewController.swift in Sources */,
 				F526781926AC3947005152C4 /* AppDelegate.swift in Sources */,
 				F526784E26AC3FAD005152C4 /* MenuCell.swift in Sources */,
+				F519FD4126B2F49700660432 /* HelpViewController2.swift in Sources */,
 				F526781B26AC3947005152C4 /* SceneDelegate.swift in Sources */,
-				F5885D7226B1D63D005BCD98 /* CUViewController.swift in Sources */,
+				F519FD3F26B2F46F00660432 /* HelpViewController.swift in Sources */,
 				F505379826AD93590012085F /* QRViewController.swift in Sources */,
 				F5B6687A26AF2DE3008AE203 /* StoreViewController.swift in Sources */,
 			);
@@ -482,6 +506,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YES_EYES/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,6 +525,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YES_EYES/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

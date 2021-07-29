@@ -48,8 +48,6 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         QRTableView.delegate = self
         QRTableView.dataSource = self
-        self.title = "QR·위시리스트"
-        self.navigationController?.navigationBar.prefersLargeTitles = false
         
         model.append(
             [QRModel(wishlist: "상품이 담겼습니다.")])
