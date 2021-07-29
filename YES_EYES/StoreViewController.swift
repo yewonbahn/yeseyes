@@ -10,7 +10,6 @@ import UIKit
 //2. storecell - class, identifier
 class StoreCell: UITableViewCell{
     @IBOutlet weak var storeLabel: UILabel!
-    
 }
 
 //3. model
@@ -42,19 +41,24 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if indexPath.section == 0 && indexPath.row == 0{
-            if let CuVc = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUViewController{
-                self.navigationController?.pushViewController(CuVc, animated: true)
+            if let CUVC = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUViewController{
+                self.navigationController?.pushViewController(CUVC, animated: true)
             }
-          
         }
-
     }
+    
     //1. view class connection
     @IBOutlet weak var storeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "상품 쇼핑"
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        
         storeTableView.delegate = self
         storeTableView.dataSource = self
         storeTableView.backgroundColor = UIColor(displayP3Red: 228/255, green: 231/255, blue: 246/255, alpha:0)

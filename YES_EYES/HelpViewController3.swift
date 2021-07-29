@@ -29,6 +29,7 @@ class HelpViewController3: UIViewController, UITableViewDelegate, UITableViewDat
    
     @IBOutlet weak var helpTableView3: UITableView!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         helpTableView3.delegate = self
         helpTableView3.dataSource = self

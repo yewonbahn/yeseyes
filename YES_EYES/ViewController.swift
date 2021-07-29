@@ -73,18 +73,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             if let HelpVC = UIStoryboard(name: "HelpViewController", bundle: nil).instantiateViewController(identifier: "HelpViewController") as? HelpViewController{
                 self.navigationController?.pushViewController(HelpVC, animated: true)
             }
-          
         }
-
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         
-        cell.menuTitle.text = settingModel[indexPath.section
-        ][indexPath.row].mainTitle
+        cell.menuTitle.text = settingModel[indexPath.section][indexPath.row].mainTitle
 //        cell.rightImageView.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].rightImageName ?? "")
         
         return cell
@@ -94,6 +90,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
-    
 }

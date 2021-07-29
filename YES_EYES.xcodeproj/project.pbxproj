@@ -17,6 +17,8 @@
 		F519FD4326B2F4D100660432 /* HelpViewController2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F519FD4226B2F4D100660432 /* HelpViewController2.storyboard */; };
 		F519FD4526B2F58300660432 /* CUViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F519FD4426B2F58300660432 /* CUViewController.storyboard */; };
 		F519FD4726B2F5B700660432 /* CUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519FD4626B2F5B700660432 /* CUViewController.swift */; };
+		F51B8CB226B310C8005A13CF /* CU1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51B8CB126B310C8005A13CF /* CU1ViewController.swift */; };
+		F51B8CB426B310D6005A13CF /* CU1ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51B8CB326B310D6005A13CF /* CU1ViewController.storyboard */; };
 		F526781926AC3947005152C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526781826AC3947005152C4 /* AppDelegate.swift */; };
 		F526781B26AC3947005152C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526781A26AC3947005152C4 /* SceneDelegate.swift */; };
 		F526781D26AC3947005152C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526781C26AC3947005152C4 /* ViewController.swift */; };
@@ -62,6 +64,8 @@
 		F519FD4226B2F4D100660432 /* HelpViewController2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpViewController2.storyboard; sourceTree = "<group>"; };
 		F519FD4426B2F58300660432 /* CUViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CUViewController.storyboard; sourceTree = "<group>"; };
 		F519FD4626B2F5B700660432 /* CUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUViewController.swift; sourceTree = "<group>"; };
+		F51B8CB126B310C8005A13CF /* CU1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CU1ViewController.swift; sourceTree = "<group>"; };
+		F51B8CB326B310D6005A13CF /* CU1ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CU1ViewController.storyboard; sourceTree = "<group>"; };
 		F526781526AC3947005152C4 /* YES_EYES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YES_EYES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F526781826AC3947005152C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F526781A26AC3947005152C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				F5B6687926AF2DE3008AE203 /* StoreViewController.swift */,
 				F519FD4426B2F58300660432 /* CUViewController.storyboard */,
 				F519FD4626B2F5B700660432 /* CUViewController.swift */,
+				F51B8CB326B310D6005A13CF /* CU1ViewController.storyboard */,
+				F51B8CB126B310C8005A13CF /* CU1ViewController.swift */,
 				F5B6687F26AF3773008AE203 /* AIViewController.storyboard */,
 				F5B6687D26AF3759008AE203 /* AIViewController.swift */,
 				8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */,
@@ -293,6 +299,7 @@
 				F5B6688026AF3773008AE203 /* AIViewController.storyboard in Resources */,
 				84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */,
 				F526782026AC3947005152C4 /* Main.storyboard in Resources */,
+				F51B8CB426B310D6005A13CF /* CU1ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +326,7 @@
 			files = (
 				F519FD4726B2F5B700660432 /* CUViewController.swift in Sources */,
 				F526785126AC43AD005152C4 /* SettingModel.swift in Sources */,
+				F51B8CB226B310C8005A13CF /* CU1ViewController.swift in Sources */,
 				84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */,
 				F526781D26AC3947005152C4 /* ViewController.swift in Sources */,
 				F5B6687E26AF3759008AE203 /* AIViewController.swift in Sources */,
