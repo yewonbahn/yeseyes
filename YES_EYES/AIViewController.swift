@@ -41,6 +41,9 @@ class AIViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         AITableView.delegate = self
         AITableView.dataSource = self
+        self.title = "상품 인식"
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        
         model.append([AIModel(AITitle: "CAM")])
     }
 }

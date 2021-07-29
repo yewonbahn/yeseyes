@@ -10,7 +10,6 @@ import UIKit
 //2. storecell - class, identifier
 class StoreCell: UITableViewCell{
     @IBOutlet weak var storeLabel: UILabel!
-    
 }
 
 //3. model
@@ -47,6 +46,9 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var storeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "상품 쇼핑"
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        
         storeTableView.delegate = self
         storeTableView.dataSource = self
         storeTableView.backgroundColor = UIColor(displayP3Red: 228/255, green: 231/255, blue: 246/255, alpha:0)
