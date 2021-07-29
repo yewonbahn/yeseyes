@@ -42,7 +42,15 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0{
+            if let CuVc = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUViewController{
+                self.navigationController?.pushViewController(CuVc, animated: true)
+            }
+          
+        }
+
+    }
     //1. view class connection
     @IBOutlet weak var storeTableView: UITableView!
     override func viewDidLoad() {
