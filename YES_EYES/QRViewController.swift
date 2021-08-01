@@ -42,7 +42,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-
+    @IBOutlet weak var QrView: UIImageView!
     @IBOutlet weak var QRTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,5 +53,23 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         model.append(
             [QRModel(wishlist: "상품이 담겼습니다.")])
+        // "Hello,world!" 가 Qr 로 형성되어있음
+        //
+        let QRCodeImage = generateQRCode(from: "Hello, world!")
+        self.QrView.image = QRCodeImage
     }
+    
+ 
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+      
+        if let QRFilter = CIFilter(name: "CIQRCodeGenerator") {
+            QRFilter.setValue(data, forKey: "inputMessage")
+            guard let QRImage = QRFilter.outputImage else { return nil }
+            return UIImage(ciImage: QRImage)
+        }
+      
+        return nil
+    }
+
 }
