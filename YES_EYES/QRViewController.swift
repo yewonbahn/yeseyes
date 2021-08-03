@@ -66,10 +66,13 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         if let QRFilter = CIFilter(name: "CIQRCodeGenerator") {
             QRFilter.setValue(data, forKey: "inputMessage")
             guard let QRImage = QRFilter.outputImage else { return nil }
-            return UIImage(ciImage: QRImage)
+            
+            let scaleUp = CGAffineTransform(scaleX: 10.0, y: 10.0)
+            let scaledQR = QRImage.transformed(by: scaleUp)
+            
+            return UIImage(ciImage: scaledQR)
         }
       
         return nil
     }
-
 }
