@@ -22,6 +22,11 @@ class ViewController: UIViewController {
             SettingModel(mainTitle: "도움말")])
         }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -36,6 +41,7 @@ class ViewController: UIViewController {
         makeData()
     }
 }
+
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
