@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>871770531270-1kead6pbs4kgs9orulkorhqt1jg2jmn0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.871770531270-1kead6pbs4kgs9orulkorhqt1jg2jmn0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBzWfdnYDx39ep-AOtQWKU-RRZTVlMs_Uc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>871770531270</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.cignal.yeseyes</string>
+	<key>PROJECT_ID</key>
+	<string>yes-eyes-d7690</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yes-eyes-d7690.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:871770531270:ios:2aae70b1d09568d1e6fec7</string>
+	<key>DATABASE_URL</key>
+	<string>https://yes-eyes-d7690-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,6 @@
+framework module Pods_YES_EYES_YES_EYESUITests {
+  umbrella header "Pods-YES_EYES-YES_EYESUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

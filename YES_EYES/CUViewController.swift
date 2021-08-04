@@ -44,6 +44,48 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 self.navigationController?.pushViewController(CU1VC, animated: true)
             }
         }
+        
+        if indexPath.section == 0 && indexPath.row == 1{
+            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                self.navigationController?.pushViewController(CU1VC, animated: true)
+            }
+        }
+        
+        if indexPath.section == 0 && indexPath.row == 2{
+            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                self.navigationController?.pushViewController(CU1VC, animated: true)
+            }
+        }
+        
+        if indexPath.section == 0 && indexPath.row == 3{
+            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                self.navigationController?.pushViewController(CU1VC, animated: true)
+            }
+        }
+        
+        if indexPath.section == 0 && indexPath.row == 4{
+            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                self.navigationController?.pushViewController(CU1VC, animated: true)
+            }
+        }
+        
+        if indexPath.section == 0 && indexPath.row == 5{
+            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                self.navigationController?.pushViewController(CU1VC, animated: true)
+            }
+        }
+        
+        if indexPath.section == 0 && indexPath.row == 6{
+            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                self.navigationController?.pushViewController(CU1VC, animated: true)
+            }
+        }
+        
+        if indexPath.section == 0 && indexPath.row == 7{
+            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                self.navigationController?.pushViewController(CU1VC, animated: true)
+            }
+        }
     }
 
     @IBOutlet weak var CUTableView: UITableView!
@@ -51,7 +93,7 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         CUTableView.delegate = self
         CUTableView.dataSource = self
-        self.title = "CU"
+        self.title = "[CU] 할인 상품"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
         model.append([

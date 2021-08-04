@@ -1,0 +1,6 @@
+framework module Pods_YES_EYESTests {
+  umbrella header "Pods-YES_EYESTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

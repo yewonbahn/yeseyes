@@ -46,8 +46,8 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 0 && indexPath.row == 0{
-            if let CUVC = UIStoryboard(name: "CUViewController", bundle: nil).instantiateViewController(identifier: "CUViewController") as? CUViewController{
-                self.navigationController?.pushViewController(CUVC, animated: true)
+            if let CUSVC = UIStoryboard(name: "CUSaleViewController", bundle: nil).instantiateViewController(identifier: "CUSaleViewController") as? CUSaleViewController{
+                self.navigationController?.pushViewController(CUSVC, animated: true)
             }
         }
     }
