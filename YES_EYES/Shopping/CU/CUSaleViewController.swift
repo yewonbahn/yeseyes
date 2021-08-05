@@ -4,7 +4,7 @@
 //
 //  Created by mgpark on 2021/08/05.
 //
-// 할인 상품 / 전체 상품
+// Discount/Total page
 
 import UIKit
 
