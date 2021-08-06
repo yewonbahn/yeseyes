@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="I7O-Q7-zV0">
+            <objects>
+                <viewController storyboardIdentifier="CUSearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kGr-zf-l50" customClass="CUSearchViewController" customModule="YES_EYES" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JOv-jA-Rpy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-Bu-TV5" userLabel="CUSearch Table View">
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CUSearchCell" rowHeight="73" id="k7F-ee-w2F" customClass="CUSearchCell" customModule="YES_EYES" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k7F-ee-w2F" id="acr-5r-70Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzQ-Js-sCU">
+                                                    <rect key="frame" x="177.5" y="21.5" width="59" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dzQ-Js-sCU" firstAttribute="centerY" secondItem="acr-5r-70Y" secondAttribute="centerY" id="eDQ-iN-dhG"/>
+                                                <constraint firstItem="dzQ-Js-sCU" firstAttribute="centerX" secondItem="acr-5r-70Y" secondAttribute="centerX" id="lmW-41-EFI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="topLabel" destination="dzQ-Js-sCU" id="elp-Wh-xfB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="f9B-Y6-uYH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zTv-Vs-mjW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f9B-Y6-uYH" firstAttribute="leading" secondItem="JOv-jA-Rpy" secondAttribute="leading" id="6aU-62-fzr"/>
+                            <constraint firstItem="f9B-Y6-uYH" firstAttribute="top" secondItem="zTv-Vs-mjW" secondAttribute="top" id="DHV-SW-6Uu"/>
+                            <constraint firstItem="c1I-Bu-TV5" firstAttribute="leading" secondItem="zTv-Vs-mjW" secondAttribute="leading" id="bME-Cr-S8v"/>
+                            <constraint firstItem="c1I-Bu-TV5" firstAttribute="top" secondItem="f9B-Y6-uYH" secondAttribute="bottom" id="cKy-xO-2mc"/>
+                            <constraint firstItem="zTv-Vs-mjW" firstAttribute="bottom" secondItem="c1I-Bu-TV5" secondAttribute="bottom" id="gQL-gk-jj4"/>
+                            <constraint firstItem="zTv-Vs-mjW" firstAttribute="trailing" secondItem="f9B-Y6-uYH" secondAttribute="trailing" id="qhX-eN-wHV"/>
+                            <constraint firstItem="zTv-Vs-mjW" firstAttribute="trailing" secondItem="c1I-Bu-TV5" secondAttribute="trailing" id="zOl-cT-RO6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ibh-id-bsg"/>
+                    <connections>
+                        <outlet property="CUSearchTableView" destination="c1I-Bu-TV5" id="1bi-eL-WVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bsg-8S-LAW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1384" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

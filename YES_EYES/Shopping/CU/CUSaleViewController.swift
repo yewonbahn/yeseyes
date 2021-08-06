@@ -37,7 +37,7 @@ class CUSaleViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
+        return 370
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -50,7 +50,7 @@ class CUSaleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         else if indexPath.section == 0 && indexPath.row == 1{
-            if let CUtVC = UIStoryboard(name: "CUtotalViewController", bundle: nil).instantiateViewController(identifier: "CUtotalViewController") as? CUtotalViewController{
+            if let CUtVC = UIStoryboard(name: "CUSearchViewController", bundle: nil).instantiateViewController(identifier: "CUSearchViewController") as? CUSearchViewController{
                 self.navigationController?.pushViewController(CUtVC, animated: true)
             }
         }
@@ -68,6 +68,6 @@ class CUSaleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         model.append([
         SaleModel(saleTitle: "할인 상품"),
-        SaleModel(saleTitle: "전체 상품")])
+        SaleModel(saleTitle: "상품 검색")])
     }
 }

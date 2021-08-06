@@ -98,16 +98,15 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
         model.append([
+                        
                 CuModel(mainTitle: "음료"),
                 CuModel(mainTitle: "과자"),
                 CuModel(mainTitle: "아이스크림"),
-                CuModel(mainTitle: "간편식사"),
-                CuModel(mainTitle: "즉석조리"),
                 CuModel(mainTitle: "식품"),
                 CuModel(mainTitle: "생활용품")])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 150
     }
 }

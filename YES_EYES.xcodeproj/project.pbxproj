@@ -15,10 +15,8 @@
 		84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A530CC26B1675A0002B7F1 /* HelpViewController3.swift */; };
 		84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */; };
 		84FC823D26BD7AD400DF5A01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84FC823C26BD7AD400DF5A01 /* GoogleService-Info.plist */; };
-		84FC824826BD7C1600DF5A01 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC824726BD7C1600DF5A01 /* ItemViewController.swift */; };
 		84FC824D26BD7E6C00DF5A01 /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FC824C26BD7E6C00DF5A01 /* Popup.storyboard */; };
 		84FC825F26BD80CB00DF5A01 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC825E26BD80CB00DF5A01 /* PopupViewController.swift */; };
-		84FC826726BD89C400DF5A01 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC826626BD89C400DF5A01 /* ItemViewController.swift */; };
 		A6FC990C1B530E0626C5F0CE /* Pods_YES_EYESTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7793E35F4327E7293D28343D /* Pods_YES_EYESTests.framework */; };
 		E0C74FD65B0B4270E2B07523 /* Pods_YES_EYES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77568867562703D42C739090 /* Pods_YES_EYES.framework */; };
 		E557ABB15FCC08778BDD383D /* Pods_YES_EYES_YES_EYESUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579DF9E9898EF56C2AD9E939 /* Pods_YES_EYES_YES_EYESUITests.framework */; };
@@ -48,8 +46,8 @@
 		F5B6688026AF3773008AE203 /* AIViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B6687F26AF3773008AE203 /* AIViewController.storyboard */; };
 		F5E2AF4526BB06D700C9D815 /* CUSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2AF4326BB06D700C9D815 /* CUSaleViewController.swift */; };
 		F5E2AF4826BB077A00C9D815 /* CUSaleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E2AF4726BB077A00C9D815 /* CUSaleViewController.storyboard */; };
-		F5E2AF4A26BB0F7E00C9D815 /* CUtotalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E2AF4926BB0F7D00C9D815 /* CUtotalViewController.storyboard */; };
-		F5E2AF4C26BB0F8D00C9D815 /* CUtotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2AF4B26BB0F8D00C9D815 /* CUtotalViewController.swift */; };
+		F5E2AF4A26BB0F7E00C9D815 /* CUSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E2AF4926BB0F7D00C9D815 /* CUSearchViewController.storyboard */; };
+		F5E2AF4C26BB0F8D00C9D815 /* CUSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2AF4B26BB0F8D00C9D815 /* CUSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,10 +81,8 @@
 		84A530CC26B1675A0002B7F1 /* HelpViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController3.swift; sourceTree = "<group>"; };
 		84A530D926B16EA00002B7F1 /* HelpViewController3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpViewController3.storyboard; sourceTree = "<group>"; };
 		84FC823C26BD7AD400DF5A01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		84FC824726BD7C1600DF5A01 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewController.swift; path = ../../../../.Trash/ItemViewController.swift; sourceTree = "<group>"; };
 		84FC824C26BD7E6C00DF5A01 /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		84FC825E26BD80CB00DF5A01 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
-		84FC826626BD89C400DF5A01 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewController.swift; path = ../../../../.Trash/ItemViewController.swift; sourceTree = "<group>"; };
 		96071E1681D9A5D799C0F349 /* Pods-YES_EYESTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YES_EYESTests.release.xcconfig"; path = "Target Support Files/Pods-YES_EYESTests/Pods-YES_EYESTests.release.xcconfig"; sourceTree = "<group>"; };
 		A1DD43A82F4DCD4A3A642480 /* Pods-YES_EYES-YES_EYESUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YES_EYES-YES_EYESUITests.debug.xcconfig"; path = "Target Support Files/Pods-YES_EYES-YES_EYESUITests/Pods-YES_EYES-YES_EYESUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2BF85DAB9C45D1DB7756E0C /* Pods-YES_EYES.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YES_EYES.release.xcconfig"; path = "Target Support Files/Pods-YES_EYES/Pods-YES_EYES.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,8 +118,8 @@
 		F5B6687F26AF3773008AE203 /* AIViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AIViewController.storyboard; sourceTree = "<group>"; };
 		F5E2AF4326BB06D700C9D815 /* CUSaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUSaleViewController.swift; sourceTree = "<group>"; };
 		F5E2AF4726BB077A00C9D815 /* CUSaleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CUSaleViewController.storyboard; sourceTree = "<group>"; };
-		F5E2AF4926BB0F7D00C9D815 /* CUtotalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CUtotalViewController.storyboard; sourceTree = "<group>"; };
-		F5E2AF4B26BB0F8D00C9D815 /* CUtotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUtotalViewController.swift; sourceTree = "<group>"; };
+		F5E2AF4926BB0F7D00C9D815 /* CUSearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CUSearchViewController.storyboard; sourceTree = "<group>"; };
+		F5E2AF4B26BB0F8D00C9D815 /* CUSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUSearchViewController.swift; sourceTree = "<group>"; };
 		FC892CB68D01DF9F8FAB4CCE /* Pods-YES_EYES-YES_EYESUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YES_EYES-YES_EYESUITests.release.xcconfig"; path = "Target Support Files/Pods-YES_EYES-YES_EYESUITests/Pods-YES_EYES-YES_EYESUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,15 +180,15 @@
 				F5E2AF4726BB077A00C9D815 /* CUSaleViewController.storyboard */,
 				F5E2AF4326BB06D700C9D815 /* CUSaleViewController.swift */,
 				F519FD4426B2F58300660432 /* CUViewController.storyboard */,
-				84FC826626BD89C400DF5A01 /* ItemViewController.swift */,
 				F519FD4626B2F5B700660432 /* CUViewController.swift */,
-				F5E2AF4926BB0F7D00C9D815 /* CUtotalViewController.storyboard */,
-				F5E2AF4B26BB0F8D00C9D815 /* CUtotalViewController.swift */,
+				F5E2AF4926BB0F7D00C9D815 /* CUSearchViewController.storyboard */,
+				F5E2AF4B26BB0F8D00C9D815 /* CUSearchViewController.swift */,
 				F51B8CB326B310D6005A13CF /* CU1ViewController.storyboard */,
 				F51B8CB126B310C8005A13CF /* CU1ViewController.swift */,
 				739D9CEC26B7EEEA0076D382 /* ItemCell.xib */,
-				84FC824726BD7C1600DF5A01 /* ItemViewController.swift */,
 				739D9CEB26B7EEEA0076D382 /* ItemCell.swift */,
+				84FC824C26BD7E6C00DF5A01 /* Popup.storyboard */,
+				84FC825E26BD80CB00DF5A01 /* PopupViewController.swift */,
 			);
 			path = CU;
 			sourceTree = "<group>";
@@ -270,10 +266,8 @@
 				F526781E26AC3947005152C4 /* Main.storyboard */,
 				F526781C26AC3947005152C4 /* ViewController.swift */,
 				F526784D26AC3FAD005152C4 /* MenuCell.xib */,
-				84FC824C26BD7E6C00DF5A01 /* Popup.storyboard */,
 				F526784C26AC3FAD005152C4 /* MenuCell.swift */,
 				F526785026AC43AD005152C4 /* SettingModel.swift */,
-				84FC825E26BD80CB00DF5A01 /* PopupViewController.swift */,
 				F51E5E8526BBD7E4000B0AE6 /* QR-wishlist */,
 				F51E5E8626BBD805000B0AE6 /* Shopping */,
 				F51E5E8726BBD85B000B0AE6 /* Detection */,
@@ -413,7 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F526782526AC3949005152C4 /* LaunchScreen.storyboard in Resources */,
-				F5E2AF4A26BB0F7E00C9D815 /* CUtotalViewController.storyboard in Resources */,
+				F5E2AF4A26BB0F7E00C9D815 /* CUSearchViewController.storyboard in Resources */,
 				F505379A26AD93750012085F /* QRViewController.storyboard in Resources */,
 				F5E2AF4826BB077A00C9D815 /* CUSaleViewController.storyboard in Resources */,
 				8473A8AC26B02EB6008B16E7 /* HelpViewController.storyboard in Resources */,
@@ -564,7 +558,7 @@
 				F51B8CB226B310C8005A13CF /* CU1ViewController.swift in Sources */,
 				84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */,
 				739D9CED26B7EEEA0076D382 /* ItemCell.swift in Sources */,
-				F5E2AF4C26BB0F8D00C9D815 /* CUtotalViewController.swift in Sources */,
+				F5E2AF4C26BB0F8D00C9D815 /* CUSearchViewController.swift in Sources */,
 				F526781D26AC3947005152C4 /* ViewController.swift in Sources */,
 				F5B6687E26AF3759008AE203 /* AIViewController.swift in Sources */,
 				F526781926AC3947005152C4 /* AppDelegate.swift in Sources */,
@@ -574,9 +568,7 @@
 				F519FD3F26B2F46F00660432 /* HelpViewController.swift in Sources */,
 				F505379826AD93590012085F /* QRViewController.swift in Sources */,
 				73B9EB7526BAAC1200333C60 /* InfoCellViewController.swift in Sources */,
-				84FC826726BD89C400DF5A01 /* ItemViewController.swift in Sources */,
 				F5B6687A26AF2DE3008AE203 /* StoreViewController.swift in Sources */,
-				84FC824826BD7C1600DF5A01 /* ItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

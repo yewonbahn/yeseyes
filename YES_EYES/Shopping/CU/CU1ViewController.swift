@@ -23,7 +23,7 @@ struct CU1Model{
 
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    //Popup
     @IBAction func pop(_ sender: Any) {
         
         let storyboard = UIStoryboard.init(name: "Popup", bundle: nil)
@@ -39,7 +39,6 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.present(popUp, animated: true,
             completion: nil)
     }
-    
     
     var model = [[CU1Model]]()
     

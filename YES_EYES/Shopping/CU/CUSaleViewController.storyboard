@@ -17,18 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TXR-6J-wVD" customClass="saleTableView">
-                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iys-Mf-05n" customClass="saleTableView" customModule="YES_EYES" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SaleCell" rowHeight="98" id="HwK-2h-0vK" customClass="SaleCell" customModule="YES_EYES" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SaleCell" rowHeight="98" id="l8Y-a0-Dtx" customClass="SaleCell" customModule="YES_EYES" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HwK-2h-0vK" id="d4m-wX-tVb">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l8Y-a0-Dtx" id="3Cg-lH-DdZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-GH-IOb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2T-lV-kZa">
                                                     <rect key="frame" x="171.5" y="31" width="71" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
@@ -36,35 +36,28 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="z4R-GH-IOb" firstAttribute="centerY" secondItem="d4m-wX-tVb" secondAttribute="centerY" id="EHO-kG-RpU"/>
-                                                <constraint firstItem="z4R-GH-IOb" firstAttribute="centerX" secondItem="d4m-wX-tVb" secondAttribute="centerX" id="Gr1-Rc-M7Y"/>
+                                                <constraint firstItem="p2T-lV-kZa" firstAttribute="centerY" secondItem="3Cg-lH-DdZ" secondAttribute="centerY" id="INi-Mo-iaL"/>
+                                                <constraint firstItem="p2T-lV-kZa" firstAttribute="centerX" secondItem="3Cg-lH-DdZ" secondAttribute="centerX" id="zdu-fK-ZAZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="saleLabel" destination="z4R-GH-IOb" id="7Wy-Yg-Qbk"/>
+                                            <outlet property="saleLabel" destination="p2T-lV-kZa" id="2hM-ww-uDj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-PN-t2W">
-                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1l0-PN-t2W" secondAttribute="trailing" id="7cd-kz-sKm"/>
-                            <constraint firstItem="1l0-PN-t2W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="WVX-Tk-EkV"/>
-                            <constraint firstItem="TXR-6J-wVD" firstAttribute="top" secondItem="1l0-PN-t2W" secondAttribute="bottom" id="WsF-Tm-7hD"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TXR-6J-wVD" secondAttribute="bottom" id="Xl3-Rp-kIE"/>
-                            <constraint firstItem="TXR-6J-wVD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="cjp-ch-jJ6"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TXR-6J-wVD" secondAttribute="trailing" id="g3f-qq-3sU"/>
-                            <constraint firstItem="1l0-PN-t2W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zQn-VY-1t3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iys-Mf-05n" secondAttribute="trailing" id="5T8-EH-CN9"/>
+                            <constraint firstItem="iys-Mf-05n" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="UZp-6Y-f3u"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iys-Mf-05n" secondAttribute="bottom" id="qaQ-4k-uB5"/>
+                            <constraint firstItem="iys-Mf-05n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="wiC-NO-2SU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="saleTableView" destination="TXR-6J-wVD" id="Gbn-cM-FfW"/>
+                        <outlet property="saleTableView" destination="iys-Mf-05n" id="ARW-lJ-u2K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
