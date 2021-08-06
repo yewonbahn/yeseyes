@@ -22,6 +22,25 @@ struct CU1Model{
 }
 
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBAction func pop(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "Popup", bundle: nil)
+        let popUp = storyboard.instantiateViewController(identifier: "Popup")
+        
+        popUp.modalPresentationStyle = .overCurrentContext
+        popUp.modalTransitionStyle = .crossDissolve
+        
+        let temp = popUp as? PopupViewController
+        
+        temp?.strText = "어렵다"
+        
+        self.present(popUp, animated: true,
+            completion: nil)
+    }
+    
+    
     var model = [[CU1Model]]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
