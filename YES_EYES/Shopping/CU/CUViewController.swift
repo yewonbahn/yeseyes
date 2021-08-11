@@ -42,51 +42,59 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         if indexPath.section == 0 && indexPath.row == 0{
             if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                CU1VC.text = String(indexPath.row)
                 self.navigationController?.pushViewController(CU1VC, animated: true)
             }
         }
         
         if indexPath.section == 0 && indexPath.row == 1{
             if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                CU1VC.text = String(indexPath.row)
                 self.navigationController?.pushViewController(CU1VC, animated: true)
             }
         }
         
         if indexPath.section == 0 && indexPath.row == 2{
             if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                CU1VC.text = String(indexPath.row)
                 self.navigationController?.pushViewController(CU1VC, animated: true)
             }
         }
         
         if indexPath.section == 0 && indexPath.row == 3{
             if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                CU1VC.text = String(indexPath.row)
                 self.navigationController?.pushViewController(CU1VC, animated: true)
             }
         }
         
         if indexPath.section == 0 && indexPath.row == 4{
             if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+                CU1VC.text = String(indexPath.row)
                 self.navigationController?.pushViewController(CU1VC, animated: true)
             }
         }
         
-        if indexPath.section == 0 && indexPath.row == 5{
-            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-                self.navigationController?.pushViewController(CU1VC, animated: true)
-            }
-        }
-        
-        if indexPath.section == 0 && indexPath.row == 6{
-            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-                self.navigationController?.pushViewController(CU1VC, animated: true)
-            }
-        }
-        
-        if indexPath.section == 0 && indexPath.row == 7{
-            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-                self.navigationController?.pushViewController(CU1VC, animated: true)
-            }
-        }
+//        if indexPath.section == 0 && indexPath.row == 5{
+//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+//                CU1VC.text = String(indexPath.row)
+//                self.navigationController?.pushViewController(CU1VC, animated: true)
+//            }
+//        }
+//
+//        if indexPath.section == 0 && indexPath.row == 6{
+//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+//                CU1VC.text = String(indexPath.row)
+//                self.navigationController?.pushViewController(CU1VC, animated: true)
+//            }
+//        }
+//
+//        if indexPath.section == 0 && indexPath.row == 7{
+//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+//                CU1VC.text = String(indexPath.row)
+//                self.navigationController?.pushViewController(CU1VC, animated: true)
+//            }
+//        }
     }
 
     @IBOutlet weak var CUTableView: UITableView!
@@ -103,7 +111,8 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 CuModel(mainTitle: "과자"),
                 CuModel(mainTitle: "아이스크림"),
                 CuModel(mainTitle: "식품"),
-                CuModel(mainTitle: "생활용품")])
+                // CuModel(mainTitle: "생활용품")
+        ])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

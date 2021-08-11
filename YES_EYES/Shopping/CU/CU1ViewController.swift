@@ -22,7 +22,8 @@ struct CU1Model{
 }
 
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var text: String = ""
+
     //Popup
     @IBAction func pop(_ sender: Any) {
         
@@ -34,7 +35,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         let temp = popUp as? PopupViewController
         
-        temp?.strText = "어렵다"
+        temp?.strText = "123"
         
         self.present(popUp, animated: true,
             completion: nil)
@@ -67,6 +68,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var CU1TableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         CU1TableView.delegate = self
         CU1TableView.dataSource = self
@@ -79,7 +81,14 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let ref: DatabaseReference! = Database.database().reference()
         // var handle: DatabaseHandle!
         
-        ref.child("cu").child("instant").observeSingleEvent(of: .value) { (snapshot) in
+        var route: String = ""
+        
+        if text == "0" { route = "drink" }
+        else if text == "1" { route = "snack" }
+        else if text == "2" { route = "icecream" }
+        else if text == "3" { route = "food" }
+        
+        ref.child("cu").child(route).observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 
@@ -93,9 +102,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             }
             self.CU1TableView.reloadData()
         }
-        
         // 추후 함수 분리할 수 있으니 하단 주석은 남겨 둡니다.
-
     }
 }
 

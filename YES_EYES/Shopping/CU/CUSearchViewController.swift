@@ -41,17 +41,9 @@ class CUSearchViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//        if indexPath.section == 0 && indexPath.row == 0{
-//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-//                self.navigationController?.pushViewController(CU1VC, animated: true)
-//            }
-//        }
-//    }
-//
     @IBOutlet weak var CUSearchTableView: UITableView!
+    
+    var text: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,11 +55,17 @@ class CUSearchViewController: UIViewController, UITableViewDelegate, UITableView
         
         CUSearchTableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
         
+        var route: String = ""
+        
+        if text == "0" { route = "drink" }
+        else if text == "1" { route = "snack" }
+        else if text == "2" { route = "icecream" }
+        else if text == "3" { route = "food" }
         
         let ref: DatabaseReference! = Database.database().reference()
         // var handle: DatabaseHandle!
         
-        ref.child("cu").child("instant").observeSingleEvent(of: .value) { (snapshot) in
+        ref.child("cu").child(route).observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 
