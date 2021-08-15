@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,27 +28,33 @@
                                             <action selector="close:" destination="jni-hP-GRF" eventType="touchUpInside" id="2Np-b7-3Fx"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zy-VX-Ha1">
+                                        <rect key="frame" x="30" y="30" width="191" height="111"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="191" id="7TE-hF-jq7"/>
+                                            <constraint firstAttribute="height" constant="111" id="tBd-UU-mjn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="3zy-VX-Ha1" firstAttribute="top" secondItem="3x4-bb-Y1o" secondAttribute="top" constant="30" id="Lfc-wG-esP"/>
+                                    <constraint firstItem="3zy-VX-Ha1" firstAttribute="centerX" secondItem="3x4-bb-Y1o" secondAttribute="centerX" id="Lw3-CH-lu3"/>
+                                    <constraint firstItem="3zy-VX-Ha1" firstAttribute="leading" secondItem="3x4-bb-Y1o" secondAttribute="leading" constant="30" id="THR-xX-D2Y"/>
                                     <constraint firstAttribute="width" constant="240" id="id1-ks-k8g"/>
+                                    <constraint firstItem="3zy-VX-Ha1" firstAttribute="centerY" secondItem="3x4-bb-Y1o" secondAttribute="centerY" constant="-82.5" id="urz-pH-cH5"/>
                                     <constraint firstAttribute="height" constant="250" id="xwO-su-pBI"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zy-VX-Ha1">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xLT-vO-HNm"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
                             <constraint firstItem="3x4-bb-Y1o" firstAttribute="centerY" secondItem="nhe-9H-N25" secondAttribute="centerY" id="7Tc-kd-Pcv"/>
                             <constraint firstItem="3x4-bb-Y1o" firstAttribute="centerX" secondItem="nhe-9H-N25" secondAttribute="centerX" id="AZX-QZ-hvb"/>
-                            <constraint firstItem="3zy-VX-Ha1" firstAttribute="centerY" secondItem="nhe-9H-N25" secondAttribute="centerY" id="I30-LD-LCP"/>
-                            <constraint firstItem="3zy-VX-Ha1" firstAttribute="centerX" secondItem="nhe-9H-N25" secondAttribute="centerX" id="V6R-WX-p4S"/>
                         </constraints>
                     </view>
                     <connections>
@@ -57,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hg-S6-9SQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="68"/>
+            <point key="canvasLocation" x="53.623188405797109" y="67.633928571428569"/>
         </scene>
     </scenes>
     <resources>

@@ -10,15 +10,15 @@ import UIKit
 class PopupViewController: UIViewController {
 
     @IBOutlet weak var Label: UILabel!
-    
+
     var strText = "nil"
     override func viewDidLoad() {
         super.viewDidLoad()
+        Label.numberOfLines = 0
         Label.text = strText
         // Do any additional setup after loading the view.
     }
     
-
     @IBAction func close(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)

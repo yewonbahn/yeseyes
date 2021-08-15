@@ -23,24 +23,42 @@ struct CU1Model{
 
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var text: String = ""
+    var product:Dictionary<String, String> = [String: String]()
 
     //Popup
-    @IBAction func pop(_ sender: Any) {
-        
-        let storyboard = UIStoryboard.init(name: "Popup", bundle: nil)
-        let popUp = storyboard.instantiateViewController(identifier: "Popup")
-        
-        popUp.modalPresentationStyle = .overCurrentContext
-        popUp.modalTransitionStyle = .crossDissolve
-        
-        let temp = popUp as? PopupViewController
-        
-        temp?.strText = "123"
-        
-        self.present(popUp, animated: true,
-            completion: nil)
-    }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let vc = segue.destination as! CU1ViewController
+//        let cell = sender as! UITableViewCell
+//        let indexPath = tableView.indexPath(for: cell)
+//        vc.kindTitle = infoList[(indexPath?.row)!]//내가누른 cell의 text
+//        vc.kindRow = (indexPath?.row)!//내가누른 cell의 row값
+//    }
+//
+//    @IBAction func pop(_ sender: Any, for segue: UIStoryboardSegue) {
+//
+//        let storyboard = UIStoryboard.init(name: "Popup", bundle: nil)
+//        let popUp = storyboard.instantiateViewController(identifier: "Popup")
+//
+//        popUp.modalPresentationStyle = .overCurrentContext
+//        popUp.modalTransitionStyle = .crossDissolve
+//
+//        var index: Int = 0
+//        self.delegate?.pop(index: index)
+//
+//        let temp = popUp as? PopupViewController
+//
+//        let vc = segue.destination as! CU1ViewController
+//        let cell = sender as! ItemCell
+//        let indexPath = tableView.indexPath(for: cell)
+//        vc.kindTitle = infoList[(indexPath?.row)!]//내가누른 cell의 text
+//
+//        temp?.strText = "123"
+//
+//        self.present(popUp, animated: true,
+//            completion: nil)
+//    }
+//
     var model = [[CU1Model]]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,12 +82,25 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // performSegue(withIdentifier: "Popup", sender: nil)
+        
+        let storyboard = UIStoryboard.init(name: "Popup", bundle: nil)
+        let popUp = storyboard.instantiateViewController(identifier: "Popup")
+        
+        popUp.modalPresentationStyle = .overCurrentContext
+        popUp.modalTransitionStyle = .crossDissolve
+        
+        let temp = popUp as? PopupViewController
+        temp?.strText = model[indexPath.section][indexPath.row].info
+        
+        self.present(popUp, animated: true, completion: nil)
+    }
     
     @IBOutlet weak var CU1TableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         CU1TableView.delegate = self
         CU1TableView.dataSource = self
         
@@ -99,7 +130,9 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 let info = item["info"] ?? ""
                 
                 self.model.append([CU1Model(title: title as! String, price: price as! String, info: info as! String)])
+                self.product[title as! String] = info as? String
             }
+            
             self.CU1TableView.reloadData()
         }
         // 추후 함수 분리할 수 있으니 하단 주석은 남겨 둡니다.
