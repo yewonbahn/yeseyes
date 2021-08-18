@@ -20,6 +20,7 @@ struct CU1Model{
 }
 
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var cartButton: UIView!
     var text: String = ""
     var product:Dictionary<String, String> = [String: String]()
 //    var term = ""
@@ -105,6 +106,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         CU1TableView.dataSource = self
         CU1SearchBar.delegate = self
         CU1TableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
+        cartButton.layer.cornerRadius = cartButton.frame.height / 2
         
         self.title = "CU"
         self.navigationController?.navigationBar.prefersLargeTitles = false
@@ -135,10 +137,12 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
             self.CU1TableView.reloadData()
         }
-        // 추후 함수 분리할 수 있으니 하단 주석은 남겨 둡니다.
+        
     }
-}
+        // 추후 함수 분리할 수 있으니 하단 주석은 남겨 둡니다.
 
+    }
+    
 //func getData() {
 //
 //    var model = [[CU1Model]]()

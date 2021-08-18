@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,7 +12,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="49" id="eOu-EB-qIb" customClass="ItemCell" customModule="YES_EYES" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOu-EB-qIb" id="wku-4L-HMw">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOu-EB-qIb" id="wku-4L-HMw">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -23,22 +23,29 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h6-1c-t59">
-                        <rect key="frame" x="352" y="14" width="42" height="21"/>
+                        <rect key="frame" x="305" y="14" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="VoS-BY-5gn">
+                        <rect key="frame" x="356" y="9" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Add"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="15t-Cp-iug" firstAttribute="leading" secondItem="wku-4L-HMw" secondAttribute="leading" constant="20" id="135-fC-GuX"/>
-                    <constraint firstAttribute="trailing" secondItem="9h6-1c-t59" secondAttribute="trailing" constant="20" id="Eqm-Kr-kXD"/>
+                    <constraint firstAttribute="trailing" secondItem="9h6-1c-t59" secondAttribute="trailing" constant="55" id="Eqm-Kr-kXD"/>
                     <constraint firstItem="9h6-1c-t59" firstAttribute="centerY" secondItem="wku-4L-HMw" secondAttribute="centerY" id="Qkm-0v-Ueb"/>
                     <constraint firstItem="15t-Cp-iug" firstAttribute="centerY" secondItem="wku-4L-HMw" secondAttribute="centerY" id="RdG-7l-rCw"/>
+                    <constraint firstItem="VoS-BY-5gn" firstAttribute="leading" secondItem="9h6-1c-t59" secondAttribute="trailing" constant="9" id="UeC-bk-QKs"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="Price" destination="9h6-1c-t59" id="7D1-Mm-b8p"/>
                 <outlet property="Title" destination="15t-Cp-iug" id="gE0-L1-oD2"/>
+                <outlet property="addButton" destination="VoS-BY-5gn" id="qWb-VK-7ea"/>
             </connections>
             <point key="canvasLocation" x="86.956521739130437" y="-247.43303571428569"/>
         </tableViewCell>
