@@ -14,7 +14,7 @@ class CU1Cell : UITableViewCell{
     
 }
 
-struct CU1Model{
+struct CU1Model: Codable, Equatable {
     var title = ""
     var price = ""
     var info = ""
