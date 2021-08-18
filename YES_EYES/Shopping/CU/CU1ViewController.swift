@@ -76,10 +76,11 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         as! ItemCell
+        let item = model[indexPath.section][indexPath.row]
         
         // 상품명과 가격 값을 라벨에 표시
-        cell.Title.text = model[indexPath.section][indexPath.row].title
-        cell.Price.text = model[indexPath.section][indexPath.row].price
+        cell.Title.text = item.title
+        cell.Price.text = item.price
 //        tableView.deselectRow(at: indexPath, animated: true)
         return cell
     }
@@ -111,6 +112,18 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 //        viewController.cart = self.cart
         navigationController?.pushViewController(viewController, animated: true)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.cartButton.isEnabled = false
+        self.cartButton.isEnabled = true
+        
+//        cart.updateCart()
+        self.cartButton.setTitle("Check(\(model.count))", for: .normal)
+//        tableView.reloadData()
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -189,6 +202,9 @@ for i in range() {
 //}
 
 extension CU1ViewController: UISearchBarDelegate{
+    
+
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         
