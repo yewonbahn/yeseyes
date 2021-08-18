@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 class CU1Cell : UITableViewCell{
     @IBOutlet weak var CU1Label: UILabel!
+    
 }
 
 struct CU1Model{
@@ -20,9 +21,11 @@ struct CU1Model{
 }
 
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var cartButton: UIView!
+
+    @IBOutlet weak var cartButton: UIButton!
     var text: String = ""
     var product:Dictionary<String, String> = [String: String]()
+    
 //    var term = ""
     //Popup
     
@@ -94,11 +97,20 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         temp?.strText = model[indexPath.section][indexPath.row].info
         
         self.present(popUp, animated: true, completion: nil)
+        
+        
     }
 
     @IBOutlet weak var CU1SearchBar: UISearchBar!
     
     @IBOutlet weak var CU1TableView: UITableView!
+    
+    @objc func didTabCartButton() {
+        let storyboard = UIStoryboard(name: "QRViewController", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "QRViewController") as? QRViewController else { fatalError() }
+//        viewController.cart = self.cart
+        navigationController?.pushViewController(viewController, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -107,7 +119,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         CU1SearchBar.delegate = self
         CU1TableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
         cartButton.layer.cornerRadius = cartButton.frame.height / 2
-        
+        cartButton.addTarget(self, action: #selector(didTabCartButton), for: .touchUpInside)
         self.title = "CU"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
@@ -142,6 +154,9 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // 추후 함수 분리할 수 있으니 하단 주석은 남겨 둡니다.
 
     }
+
+
+    
     
 //func getData() {
 //
@@ -175,6 +190,9 @@ for i in range() {
 
 extension CU1ViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        
+        
         guard let title: String = searchBar.text else { return }
         print(title)
 

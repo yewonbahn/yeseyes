@@ -96,7 +96,7 @@
                     <connections>
                         <outlet property="CU1SearchBar" destination="Fqw-jj-c2w" id="oZW-b6-daE"/>
                         <outlet property="CU1TableView" destination="hD1-Cf-k04" id="njN-Kr-EHD"/>
-                        <outlet property="cartButton" destination="98s-ZC-hcL" id="EnM-GA-YF9"/>
+                        <outlet property="cartButton" destination="7KK-d9-Ssa" id="Ij1-Sm-Fw8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIJ-l8-op4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
