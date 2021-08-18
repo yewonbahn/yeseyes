@@ -21,7 +21,7 @@ struct CU1Model: Codable, Equatable {
 }
 
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    var cart = Cart()
     @IBOutlet weak var cartButton: UIButton!
     var text: String = ""
     var product:Dictionary<String, String> = [String: String]()
@@ -118,8 +118,8 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.cartButton.isEnabled = false
         self.cartButton.isEnabled = true
         
-//        cart.updateCart()
-        self.cartButton.setTitle("Check(\(model.count))", for: .normal)
+        cart.updateCart()
+        self.cartButton.setTitle("Check(\(cart.items.count))", for: .normal)
 //        tableView.reloadData()
     }
     
@@ -201,14 +201,20 @@ for i in range() {
 
 //}
 
-extension CU1ViewController: UISearchBarDelegate{
-    
+extension CU1ViewController: UISearchBarDelegate, CartDelegate{
 
-    
+    func updateCart(cell: ItemCell) {
+        guard let indexPath = CU1TableView.indexPath(for: cell) else { return }
+        let item = model[indexPath.section][indexPath.row]
+        
+        cart.updateCart(with: item)
+        
+        self.cartButton.setTitle("Check(\(cart.items.count))", for: .normal)
+    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        
-        
+
+
+
         guard let title: String = searchBar.text else { return }
         print(title)
 
