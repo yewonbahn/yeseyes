@@ -2,11 +2,9 @@
 //  QRViewController.swift
 //  YES_EYES
 //
-//  Created by mgpark on 2021/07/25.
-//
+//  Created by mgpark on 2021/07/25
 
 import UIKit
-
 class QRCell: UITableViewCell{
     
     @IBOutlet weak var wishlistTitle: UILabel!
@@ -22,8 +20,17 @@ struct QRModel{
     var wishlist = ""
 }
 
-class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartItemDelegate {
+    func updateCartItem(cell: CartListTableViewCell, quantity: Int) {
+        guard let indexPath = QRTableView.indexPath(for: cell) else { return }
+        guard let cartItem = cart?.items[indexPath.row] else { return }
+        
+        cartItem.quantity = quantity
+        
+      
+    }
     
+    var cart: Cart? = nil
     var model = [[QRModel]]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,10 +42,16 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QRCell", for: indexPath) as! QRCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CartListTableViewCell else { fatalError() }
         
-        cell.wishlistTitle.text = model[indexPath.section][indexPath.row].wishlist
-        
+        if let cartItem = cart?.items[indexPath.row] {
+            cell.delegate = self as CartItemDelegate
+            cell.itemTitle.text = cartItem.item.title
+            cell.itemPrice.text = cartItem.item.price
+            
+            cell.countLabel.text = String(describing: cartItem.quantity)
+            cell.quantity = cartItem.quantity
+        }
         return cell
     }
     
