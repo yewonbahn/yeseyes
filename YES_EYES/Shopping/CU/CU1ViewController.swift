@@ -79,9 +79,12 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let item = model[indexPath.section][indexPath.row]
         
         // 상품명과 가격 값을 라벨에 표시
+        cell.delegate = self
+        
         cell.Title.text = item.title
         cell.Price.text = item.price
 //        tableView.deselectRow(at: indexPath, animated: true)
+        cell.setButton(state: self.cart.contains(product: item))
         return cell
     }
 
@@ -109,7 +112,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @objc func didTabCartButton() {
         let storyboard = UIStoryboard(name: "QRViewController", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "QRViewController") as? QRViewController else { fatalError() }
-//        viewController.cart = self.cart
+        viewController.cart = self.cart
         navigationController?.pushViewController(viewController, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {

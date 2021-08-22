@@ -27,25 +27,27 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         cartItem.quantity = quantity
         
-      
+
     }
     
     var cart: Cart? = nil
-    var model = [[QRModel]]()
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model[section].count
+        return 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return model.count
+        return cart?.items.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CartListTableViewCell else { fatalError() }
         
-        if let cartItem = cart?.items[indexPath.row] {
+        if let cartItem = cart?.items[indexPath.row]{
+            
             cell.delegate = self as CartItemDelegate
+            print(cartItem.item)
             cell.itemTitle.text = cartItem.item.title
             cell.itemPrice.text = cartItem.item.price
             
@@ -63,10 +65,10 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         QRTableView.dataSource = self
         self.title = "QR·위시리스트"
         self.navigationController?.navigationBar.prefersLargeTitles = false
-        
-        model.append(
-            [QRModel(wishlist: "상품이 담겼습니다.")])
-        // "Hello,world!" 가 Qr 로 형성되어있음
+     
+//        model.append(
+//            [QRModel(wishlist: "상품이 담겼습니다.")])
+//        // "Hello,world!" 가 Qr 로 형성되어있음
         //
         let QRCodeImage = generateQRCode(from: "Hello, world!")
         self.QrView.image = QRCodeImage
