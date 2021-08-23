@@ -6,7 +6,7 @@ target 'YES_EYES' do
   use_frameworks!
 
   # Pods for YES_EYES
-pod 'SnapKit', '~> 3.2.0'
+pod 'SnapKit', '~> 4.0.0'
 pod 'Firebase/Analytics'
 pod 'Firebase/RemoteConfig'
 

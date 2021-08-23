@@ -61,30 +61,49 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 //            completion: nil)
 //    }
 //
-    var model = [[CU1Model]]()
+    var model = [CU1Model]()
+    let searchController = UISearchController(searchResultsController: nil)
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // section 별 개수 출력
-        return model[section].count
+    var filtereditem = [CU1Model]()
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // 상품 데이터 개수만큼 라벨 출력
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if !filtereditem.isEmpty {
+            print(filtereditem.count)
+            return filtereditem.count
+        }
+        // section 별 개수 출력
         return model.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         as! ItemCell
-        let item = model[indexPath.section][indexPath.row]
+        // let item = model[indexPath.section][indexPath.row]
+        
+        let tmpItem: CU1Model
+                
+        if !filtereditem.isEmpty {
+            tmpItem = filtereditem[indexPath.row]
+        }
+        else if CU1SearchBar.text != "" && filtereditem.isEmpty {
+            tableView.separatorStyle = .none
+            return cell
+        }
+        else {
+            tmpItem = model[indexPath.row]
+        }
         
         // 상품명과 가격 값을 라벨에 표시
         cell.delegate = self
         
-        cell.Title.text = item.title
-        cell.Price.text = item.price
+        cell.Title.text = tmpItem.title
+        cell.Price.text = tmpItem.price
 //        tableView.deselectRow(at: indexPath, animated: true)
-        cell.setButton(state: self.cart.contains(product: item))
+        cell.setButton(state: self.cart.contains(product: tmpItem))
         return cell
     }
 
@@ -98,23 +117,34 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         popUp.modalTransitionStyle = .crossDissolve
         
         let temp = popUp as? PopupViewController
-        temp?.strText = model[indexPath.section][indexPath.row].info
+        temp?.strText = model[indexPath.row].info
         
         self.present(popUp, animated: true, completion: nil)
-        
-        
     }
 
     @IBOutlet weak var CU1SearchBar: UISearchBar!
-    
     @IBOutlet weak var CU1TableView: UITableView!
     
+    func searchBarIsEmpty() -> Bool {
+          // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filtereditem = model.filter({( item : CU1Model ) -> Bool in
+        return item.title.contains(searchText)
+        })
+        
+        CU1TableView.reloadData()
+    }
+
     @objc func didTabCartButton() {
         let storyboard = UIStoryboard(name: "QRViewController", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "QRViewController") as? QRViewController else { fatalError() }
         viewController.cart = self.cart
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -130,9 +160,16 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
         CU1TableView.delegate = self
         CU1TableView.dataSource = self
         CU1SearchBar.delegate = self
+        
         CU1TableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
         cartButton.layer.cornerRadius = cartButton.frame.height / 2
         cartButton.addTarget(self, action: #selector(didTabCartButton), for: .touchUpInside)
@@ -159,7 +196,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 let price = item["price"] ?? ""
                 let info = item["info"] ?? ""
                 
-                self.model.append([CU1Model(title: title as! String, price: price as! String, info: info as! String)])
+                self.model.append(CU1Model(title: title as! String, price: price as! String, info: info as! String))
                 self.product[title as! String] = info as? String
             }
             
@@ -208,37 +245,44 @@ extension CU1ViewController: UISearchBarDelegate, CartDelegate{
 
     func updateCart(cell: ItemCell) {
         guard let indexPath = CU1TableView.indexPath(for: cell) else { return }
-        let item = model[indexPath.section][indexPath.row]
+        let item = model[indexPath.row]
         
         cart.updateCart(with: item)
         
         self.cartButton.setTitle("Check(\(cart.items.count))", for: .normal)
     }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
-
-
+        
         guard let title: String = searchBar.text else { return }
         print(title)
-
-        let databaseRef = Database.database().reference().child("cu")
-        let query = databaseRef.queryOrdered(byChild: "title").queryStarting(atValue: title).queryEnding(atValue: "\(String(describing: title))\\uf8ff")
-
-        query.observeSingleEvent(of: .value) { (snapshot) in
-            guard snapshot.exists() != false else {
-                print("failing here")
-                return }
-            print(snapshot.value as Any)
-            DispatchQueue.main.async {
-
-                guard let dict = snapshot.value as? [String:Any] else {
-                    print(snapshot)
-                    return
-                }
-
-                let title = dict["title"] as? String
-                let price = dict["price"] as? String
-            }
-        }
+        filterContentForSearchText(title)
+        
+//        let databaseRef = Database.database().reference().child("cu")
+//        let query = databaseRef.queryOrdered(byChild: "title").queryStarting(atValue: title).queryEnding(atValue: "\(String(describing: title))\\uf8ff")
+//
+//        query.observeSingleEvent(of: .value) { (snapshot) in
+//            guard snapshot.exists() != false else {
+//                print("failing here")
+//                return }
+//            print(snapshot.value as Any)
+//            DispatchQueue.main.async {
+//
+//                guard let dict = snapshot.value as? [String:Any] else {
+//                    print(snapshot)
+//                    return
+//                }
+//
+//                let title = dict["title"] as? String
+//                let price = dict["price"] as? String
+//            }
+//        }
     }
+}
+
+extension CU1ViewController: UISearchResultsUpdating {
+  // MARK: - UISearchResultsUpdating Delegate
+  func updateSearchResults(for searchController: UISearchController) {
+    filterContentForSearchText(searchController.searchBar.text!)
+  }
 }

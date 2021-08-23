@@ -45,7 +45,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1eA-SL-cbW"/>
                     <connections>
-                        <outlet property="searchBarContainerView" destination="Lv0-Sr-FRV" id="2x8-t2-VET"/>
+                        <outlet property="CU1SearchBar" destination="Lv0-Sr-FRV" id="kgH-hg-UWh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pdo-fM-6Uc" sceneMemberID="firstResponder"/>

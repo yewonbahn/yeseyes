@@ -1,247 +1,228 @@
 //
-//  CUSearchViewController.swift
+//  CUViewController.swift
 //  YES_EYES
 //
 //  Created by mgpark on 2021/07/29.
 //
+// CU_category_item
 
 import UIKit
 import FirebaseDatabase
 
-//class CUSearchCell : UITableViewCell{
-//    @IBOutlet weak var SearchLabel: UILabel!
+class CUSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var text: String = ""
+    var product:Dictionary<String, String> = [String: String]()
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let vc = segue.destination as! CU1ViewController
+//        let cell = sender as! UITableViewCell
+//        let indexPath = tableView.indexPath(for: cell)
+//        vc.kindTitle = infoList[(indexPath?.row)!]//내가누른 cell의 text
+//        vc.kindRow = (indexPath?.row)!//내가누른 cell의 row값
+//    }
 //
-//}
+//    @IBAction func pop(_ sender: Any, for segue: UIStoryboardSegue) {
+//
+//        let storyboard = UIStoryboard.init(name: "Popup", bundle: nil)
+//        let popUp = storyboard.instantiateViewController(identifier: "Popup")
+//
+//        popUp.modalPresentationStyle = .overCurrentContext
+//        popUp.modalTransitionStyle = .crossDissolve
+//
+//        var index: Int = 0
+//        self.delegate?.pop(index: index)
+//
+//        let temp = popUp as? PopupViewController
+//
+//        let vc = segue.destination as! CU1ViewController
+//        let cell = sender as! ItemCell
+//        let indexPath = tableView.indexPath(for: cell)
+//        vc.kindTitle = infoList[(indexPath?.row)!]//내가누른 cell의 text
+//
+//        temp?.strText = "123"
+//
+//        self.present(popUp, animated: true,
+//            completion: nil)
+//    }
+//
+    var model = [CU1Model]()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filtereditem = [CU1Model]()
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return filtereditem.count
+        }
+        return model.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // 상품 데이터 개수만큼 라벨 출력
+        return model.count
+    }
 
-class CUTableViewController: UITableViewController {
-}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        as! ItemCell
+        
+        let tmpItem: CU1Model
+        
+        if isFiltering() {
+            tmpItem = filtereditem[indexPath.row]
+        } else {
+            tmpItem = model[indexPath.row]
+        }
+        
+        // 상품명과 가격 값을 라벨에 표시
+        cell.Title.text = tmpItem.title
+        cell.Price.text = tmpItem.price
+//        tableView.deseFlectRow(at: indexPath, animated: true)
+        return cell
+    }
 
-class CUSearchViewController: UIViewController {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // performSegue(withIdentifier: "Popup", sender: nil)
+        
+        let storyboard = UIStoryboard.init(name: "Popup", bundle: nil)
+        let popUp = storyboard.instantiateViewController(identifier: "Popup")
+        
+        popUp.modalPresentationStyle = .overCurrentContext
+        popUp.modalTransitionStyle = .crossDissolve
+        
+        let temp = popUp as? PopupViewController
+        temp?.strText = model[indexPath.row].info
+        
+        self.present(popUp, animated: true, completion: nil)
+    }
+    @IBOutlet weak var CU1SearchBar: UISearchBar!
+    @IBOutlet weak var CU1TableView: UITableView!
+    
+    func searchBarIsEmpty() -> Bool {
+      // Returns true if the text is empty or nil
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+      
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+      filtereditem = model.filter({( item : CU1Model ) -> Bool in
+        return item.title.contains(searchText)
+      })
 
-    @IBOutlet weak var searchBarContainerView: UIView!
-
-    private var cuTableViewController: CUTableViewController?
-    private var searchController: UISearchController = {
-        return UISearchController(searchResultsController: nil)
-    }()
-
+      CU1TableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearchBar()
-        setupNavigationBarTitle()
-    }
-
-    private func setupNavigationBarTitle() {
-        title = "상품 검색"
-    }
-}
-
-extension CUSearchViewController {
-    private func setupSearchBar() {
-        searchController.delegate = self
-        searchController.searchBar.delegate = self
+        
+        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder = "검색 창"
-        searchController.searchBar.translatesAutoresizingMaskIntoConstraints = true
-        searchController.searchBar.frame = searchBarContainerView.bounds
-        searchController.searchBar.autoresizingMask = [.flexibleWidth]
-        searchBarContainerView.addSubview(searchController.searchBar)
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        CU1TableView.delegate = self
+        CU1TableView.dataSource = self
+        CU1SearchBar.delegate = self
+        
+        CU1TableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
+        
+        self.title = "CU"
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        
+        let ref: DatabaseReference! = Database.database().reference()
+        // var handle: DatabaseHandle!
+        
+        var route: String = ""
+        
+        if text == "0" { route = "drink" }
+        else if text == "1" { route = "snack" }
+        else if text == "2" { route = "icecream" }
+        else if text == "3" { route = "food" }
+        
+        ref.child("cu").child(route).observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                
+                let item = snap.value as! [String: Any]
+                
+                let title = item["title"] ?? ""
+                let price = item["price"] ?? ""
+                let info = item["info"] ?? ""
+                
+                self.model.append(CU1Model(title: title as! String, price: price as! String, info: info as! String))
+                self.product[title as! String] = info as? String
+            }
+            print("123123")
+            self.CU1TableView.reloadData()
+        }
+        // 추후 함수 분리할 수 있으니 하단 주석은 남겨 둡니다.
     }
 }
 
-extension CUSearchViewController: UISearchControllerDelegate {
-    func willPresentSearchController(_ searchController: UISearchController) {
-        print(#function, "updateQueriesSuggestions")
-    }
-
-    func willDismissSearchController(_ searchController: UISearchController) {
-        print(#function, "updateQueriesSuggestions")
-    }
-
-    func didDismissSearchController(_ searchController: UISearchController) {
-        print(#function, "updateQueriesSuggestions")
-    }
-}
-
-extension CUSearchViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text, !searchText.isEmpty else { return }
-        searchController.isActive = false
-        print(searchText)
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("cancel")
-    }
-}
-
+//func getData() {
 //
-//struct CUSearchModel{
-//    var CUtitle = ""
-//    var price = ""
-//    var info = ""
-//}
+//    var model = [[CU1Model]]()
+//    let ref: DatabaseReference! = Database.database().reference()
+//    var handle: DatabaseHandle!
 //
-//class CUSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+//    handle = ref.child("cu").child("instant").observeSingleEvent(of: .value, with: { (snapshot) in
+//        for child in snapshot.children {
+//            let snap = child as! DataSnapshot
 //
-//    @IBOutlet weak var CUSearchBarContainerView: UIView!
-////    @IBOutlet weak var CUSearchBar: UISearchBar!
+//            let item = snap.value as! [String: Any]
 //
-//    private var cuTableViewController: CUTableViewController?
-//    private var searchController: UISearchController = {
-//        return UISearchController(searchResultsController: nil)
+//            let title = item["title"] ?? ""
+//            let price = item["price"] ?? ""
+//            let info = item["info"] ?? ""
 //
-//    var model = [[CUSearchModel]]()
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // section 별 개수 출력
-//        return model[section].count
-//    }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        // 상품 데이터 개수만큼 라벨 출력
-//        return model.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-//        as! ItemCell
-//
-//        // 상품명과 가격 값을 라벨에 표시
-//        cell.Title.text = model[indexPath.section][indexPath.row].CUtitle
-//        cell.Price.text = model[indexPath.section][indexPath.row].price
-////        tableView.deselectRow(at: indexPath, animated: true)
-//        return cell
-//    }
-//
-//    @IBOutlet weak var CUSearchTableView: UITableView!
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        CUSearchBar.delegate = self;
-//
-//        CUSearchTableView.delegate = self
-//        CUSearchTableView.dataSource = self
-//        CUSearchTableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
-//
-//        self.title = "CU"
-//        self.navigationController?.navigationBar.prefersLargeTitles = false
-//
-//        let ref: DatabaseReference! = Database.database().reference()
-//        // var handle: DatabaseHandle!
-//
-//        ref.child("cu").child("instant").observeSingleEvent(of: .value) { (snapshot) in
-//            for child in snapshot.children {
-//                let snap = child as! DataSnapshot
-//
-//                let item = snap.value as! [String: Any]
-//
-//                let CUtitle = item["title"] ?? ""
-//                let price = item["price"] ?? ""
-//                let info = item["info"] ?? ""
-//
-//                self.model.append([CUSearchModel(CUtitle: CUtitle as! String, price: price as! String, info: info as! String)])
-//            }
-//            self.CUSearchTableView.reloadData()
+//            self.model.append([CU1Model(title: title as! String, price: price as! String, info: info as! String)])
 //        }
-//    }
+//        // print(model)
+//    })
+
+/*
+for i in range() {
+    model.append([CU1Model(title: "상품이름", price: "상품가격")])
+    // 데이터를 받아와서 이 형식으로 반복문 생성하면 에뮬레이터 화면에 상품명과 상품가격이 뜸
+ }
+*/
+
 //}
 
-//extension CUSearchViewController: UISearchBarDelegate{
+extension CUSearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
+  // MARK: - UISearchResultsUpdating Delegate
+  func updateSearchResults(for searchController: UISearchController) {
+    filterContentForSearchText(searchController.searchBar.text!)
+  }
+}
+
+//extension CU1ViewController: UISearchBarDelegate{
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        guard let searchText = searchBar.text, !searchText.isEmpty else { return }
-//        searchController.isActive = false
-//        print(searchText)
-//    }
+//        guard let title: String = searchBar.text else { return }
+//        print(title)
 //
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        print("cancel")
-//    }
-//}
-
+//        let databaseRef = Database.database().reference().child("cu")
+//        let query = databaseRef.queryOrdered(byChild: "title").queryStarting(atValue: title).queryEnding(atValue: "\(String(describing: title))\\uf8ff")
 //
-////
-////  CUSearchViewController.swift
-////  YES_EYES
-////
-////  Created by mgpark on 2021/08/05.
-////
-//// CU_Search
+//        query.observeSingleEvent(of: .value) { (snapshot) in
+//            guard snapshot.exists() != false else {
+//                print("failing here")
+//                return }
+//            print(snapshot.value as Any)
+//            DispatchQueue.main.async {
 //
-//import UIKit
-//import FirebaseDatabase
+//                guard let dict = snapshot.value as? [String:Any] else {
+//                    print(snapshot)
+//                    return
+//                }
 //
-//class CUSearchCell : UITableViewCell{
-//    @IBOutlet weak var topLabel: UILabel!
-//}
-//
-//struct CUModel{
-//    var title = ""
-//    var price = ""
-//    var info = ""
-//}
-//
-//class CUSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-//
-//    var model = [[CUModel]]()
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return model[section].count
-//    }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return model.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-//        as! ItemCell
-//
-//        cell.Title.text = model[indexPath.section][indexPath.row].title
-//        cell.Price.text = model[indexPath.section][indexPath.row].price
-//
-//        return cell
-//    }
-//
-//    @IBOutlet weak var CUSearchTableView: UITableView!
-//
-//    var text: String = ""
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        CUSearchTableView.delegate = self
-//        CUSearchTableView.dataSource = self
-//
-//        self.title = "[CU] 상품 검색"
-//        self.navigationController?.navigationBar.prefersLargeTitles = false
-//
-//        CUSearchTableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
-//
-//        var route: String = ""
-//
-//        if text == "0" { route = "drink" }
-//        else if text == "1" { route = "snack" }
-//        else if text == "2" { route = "icecream" }
-//        else if text == "3" { route = "food" }
-//
-//        let ref: DatabaseReference! = Database.database().reference()
-//        // var handle: DatabaseHandle!
-//
-//        ref.child("cu").child(route).observeSingleEvent(of: .value) { (snapshot) in
-//            for child in snapshot.children {
-//                let snap = child as! DataSnapshot
-//
-//                let item = snap.value as! [String: Any]
-//
-//                let title = item["title"] ?? ""
-//                let price = item["price"] ?? ""
-//                let info = item["info"] ?? ""
-//
-//                self.model.append([CUModel(title: title as! String, price: price as! String, info: info as! String)])
+//                let title = dict["title"] as? String
+//                let price = dict["price"] as? String
 //            }
-//            self.CUSearchTableView.reloadData()
 //        }
 //    }
 //}
