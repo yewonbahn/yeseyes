@@ -41,9 +41,7 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let HelpVC2 = UIStoryboard(name: "HelpViewController2", bundle: nil).instantiateViewController(identifier: "HelpViewController2") as? HelpViewController2{
                 self.navigationController?.pushViewController(HelpVC2, animated: true)
             }
-          
         }
-
     }
     
     @IBOutlet weak var helpTableView: UITableView!
@@ -52,9 +50,8 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         helpTableView.delegate = self
         helpTableView.dataSource = self
-        
+    
         title = "HELP"
         model.append(HelpModel(mainTitle: "메인화면 전환 안내",bottomlabel: "손가락을 이용하여 화면을 넘겨주세요"))
     }
-    
 }

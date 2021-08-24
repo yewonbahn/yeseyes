@@ -32,7 +32,7 @@ class ItemCell: UITableViewCell {
     }
     func setButton(state: Bool) {
         addButton.isSelected = state
-        addButton.backgroundColor = (!addButton.isSelected) ? .black : .red
+        addButton.backgroundColor = (!addButton.isSelected) ? .systemGray : .systemIndigo
     }
     
     @objc func didTabAddButton() {

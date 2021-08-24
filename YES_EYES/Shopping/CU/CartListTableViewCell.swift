@@ -47,7 +47,7 @@ class CartListTableViewCell: UITableViewCell {
         }
         
         reduceButton.isEnabled = quantity > 0
-        reduceButton.backgroundColor = !reduceButton.isEnabled ? .gray : .black
+        reduceButton.backgroundColor = !reduceButton.isEnabled ? .gray : .systemIndigo
         
         self.countLabel.text = String(describing: quantity)
         self.delegate?.updateCartItem(cell: self, quantity: quantity)

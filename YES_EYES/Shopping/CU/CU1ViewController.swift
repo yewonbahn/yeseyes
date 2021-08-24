@@ -163,7 +163,6 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
-        navigationItem.searchController = searchController
         definesPresentationContext = true
         
         CU1TableView.delegate = self

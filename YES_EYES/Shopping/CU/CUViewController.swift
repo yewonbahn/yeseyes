@@ -68,13 +68,13 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         }
         
-        if indexPath.section == 0 && indexPath.row == 4{
-            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-                CU1VC.text = String(indexPath.row)
-                self.navigationController?.pushViewController(CU1VC, animated: true)
-            }
-        }
-        
+//        if indexPath.section == 0 && indexPath.row == 4{
+//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+//                CU1VC.text = String(indexPath.row)
+//                self.navigationController?.pushViewController(CU1VC, animated: true)
+//            }
+//        }
+//
 //        if indexPath.section == 0 && indexPath.row == 5{
 //            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
 //                CU1VC.text = String(indexPath.row)
@@ -106,16 +106,14 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
         model.append([
-                        
                 CuModel(mainTitle: "음료"),
                 CuModel(mainTitle: "과자"),
                 CuModel(mainTitle: "아이스크림"),
-                CuModel(mainTitle: "식품"),
-                // CuModel(mainTitle: "생활용품")
+                CuModel(mainTitle: "식품")
         ])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 180
     }
 }
