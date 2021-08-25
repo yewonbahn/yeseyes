@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CU1Cell" rowHeight="73" id="xJn-Bt-qIJ" customClass="CU1Cell" customModule="YES_EYES" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="73"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xJn-Bt-qIJ" id="ZZB-kt-5oL">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
@@ -47,12 +47,15 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" id="98s-ZC-hcL">
-                                <rect key="frame" x="0.0" y="714" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="714" width="414" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KK-d9-Ssa">
-                                        <rect key="frame" x="30" y="25" width="334" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KK-d9-Ssa">
+                                        <rect key="frame" x="30" y="47" width="334" height="61"/>
                                         <color key="backgroundColor" red="0.50084394219999995" green="0.49020528790000001" blue="0.74512618779999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="JRW-RZ-MXg"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,13 +66,12 @@
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="7KK-d9-Ssa" firstAttribute="leading" secondItem="KSV-Zg-Liw" secondAttribute="leading" constant="30" id="3gk-ZG-72y"/>
+                                    <constraint firstItem="KSV-Zg-Liw" firstAttribute="bottom" secondItem="7KK-d9-Ssa" secondAttribute="bottom" constant="25" id="5aw-fw-8lH"/>
                                     <constraint firstItem="KSV-Zg-Liw" firstAttribute="trailing" secondItem="7KK-d9-Ssa" secondAttribute="trailing" constant="50" id="Gtx-Ge-PCh"/>
-                                    <constraint firstItem="7KK-d9-Ssa" firstAttribute="top" secondItem="KSV-Zg-Liw" secondAttribute="top" constant="25" id="ILs-Qw-hXW"/>
-                                    <constraint firstItem="KSV-Zg-Liw" firstAttribute="bottom" secondItem="7KK-d9-Ssa" secondAttribute="bottom" constant="25" id="P54-EI-7ZM"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Fqw-jj-c2w">
-                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
