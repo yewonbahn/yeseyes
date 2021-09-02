@@ -9,6 +9,20 @@ import Foundation
 class Cart {
     
     private(set) var items : [CartItem] = []
+    
+    //    enum CodingKeys: String, CodingKey {
+    //        case items
+    //    }
+    //
+    //    required init(from decoder: Decoder) throws {
+    //        let values = try decoder.container(keyedBy: CodingKeys.self)
+    //        items = try values.decode([CartItem].self, forKey: .items)
+    //    }
+    //    public func encode(to encoder: Encoder) throws {
+    //        let container = try encoder.container(keyedBy: CodingKeys.self)
+    //        try container.encode(items, forKey: .items)
+    //    }
+    
 }
 
 extension Cart {

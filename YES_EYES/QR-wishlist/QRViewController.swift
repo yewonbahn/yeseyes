@@ -29,8 +29,6 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         guard let cartItem = cart?.items[indexPath.row] else { return }
         
         cartItem.quantity = quantity
-        
-
     }
     
     var cart: Cart? = nil
@@ -62,8 +60,31 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         return cell}
     
+    var model = [CU1Model]()
+    var newcart = Cart()
+    
+    @IBOutlet weak var InputField: UITextField!
+    
     @IBOutlet weak var QrView: UIImageView!
     @IBOutlet weak var QRTableView: UITableView!
+    
+    @IBAction func ProductEnter(_ sender: Any) {
+        
+        let title = InputField.text
+        let price = " "
+        let info = " "
+        
+        self.model.append(CU1Model(title: title as! String, price: price as! String, info: info as! String))
+        
+        let item = model[model.count-1]
+        if(title != "") {
+            cart?.updateCart(with: item)
+        }
+                
+        print(item)
+        QRTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         QRTableView.delegate = self

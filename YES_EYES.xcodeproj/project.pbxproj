@@ -11,6 +11,7 @@
 		739D9CEE26B7EEEA0076D382 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739D9CEC26B7EEEA0076D382 /* ItemCell.xib */; };
 		73B9EB7526BAAC1200333C60 /* InfoCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9EB7326BAAC1200333C60 /* InfoCellViewController.swift */; };
 		73B9EB7626BAAC1200333C60 /* InfoCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B9EB7426BAAC1200333C60 /* InfoCellViewController.xib */; };
+		73F2151026E0C8AB00A023D4 /* DataProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2150F26E0C8AB00A023D4 /* DataProperty.swift */; };
 		8473A8AC26B02EB6008B16E7 /* HelpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8473A8AB26B02EB6008B16E7 /* HelpViewController.storyboard */; };
 		84979FE826CD35C200F0ED0F /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979FE726CD35C200F0ED0F /* CartItem.swift */; };
 		84979FF026CD360A00F0ED0F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979FEF26CD360A00F0ED0F /* Cart.swift */; };
@@ -78,6 +79,7 @@
 		739D9CEC26B7EEEA0076D382 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		73B9EB7326BAAC1200333C60 /* InfoCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellViewController.swift; sourceTree = "<group>"; };
 		73B9EB7426BAAC1200333C60 /* InfoCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCellViewController.xib; sourceTree = "<group>"; };
+		73F2150F26E0C8AB00A023D4 /* DataProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProperty.swift; sourceTree = "<group>"; };
 		77568867562703D42C739090 /* Pods_YES_EYES.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YES_EYES.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7793E35F4327E7293D28343D /* Pods_YES_EYESTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YES_EYESTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CA92B00259DF4913B90590 /* Pods-YES_EYESTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YES_EYESTests.debug.xcconfig"; path = "Target Support Files/Pods-YES_EYESTests/Pods-YES_EYESTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				739D9CEB26B7EEEA0076D382 /* ItemCell.swift */,
 				84FC824C26BD7E6C00DF5A01 /* Popup.storyboard */,
 				84FC825E26BD80CB00DF5A01 /* PopupViewController.swift */,
+				73F2150F26E0C8AB00A023D4 /* DataProperty.swift */,
 			);
 			path = CU;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				F5E2AF4526BB06D700C9D815 /* CUSaleViewController.swift in Sources */,
 				F526785126AC43AD005152C4 /* SettingModel.swift in Sources */,
 				F51B8CB226B310C8005A13CF /* CU1ViewController.swift in Sources */,
+				73F2151026E0C8AB00A023D4 /* DataProperty.swift in Sources */,
 				84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */,
 				739D9CED26B7EEEA0076D382 /* ItemCell.swift in Sources */,
 				F5E2AF4C26BB0F8D00C9D815 /* CUSearchViewController.swift in Sources */,
