@@ -152,7 +152,7 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.cartButton.isEnabled = true
         
         cart.updateCart()
-        self.cartButton.setTitle("Check(\(cart.items.count))", for: .normal)
+        self.cartButton.setTitle("Check(\(cart.countItems()))", for: .normal)
 //        tableView.reloadData()
     }
     

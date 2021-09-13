@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var settingTableView: UITableView!
     
+    var cart = Cart()
+    
     func makeData(){
         settingModel.append([
             SettingModel(mainTitle: "QR·위시리스트")])
@@ -58,6 +60,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         if indexPath.section == 0 && indexPath.row == 0{
             if let QRVC = UIStoryboard(name: "QRViewController", bundle: nil).instantiateViewController(identifier: "QRViewController") as? QRViewController{
+                QRVC.cart = self.cart
                 self.navigationController?.pushViewController(QRVC, animated: true)
             }
         }

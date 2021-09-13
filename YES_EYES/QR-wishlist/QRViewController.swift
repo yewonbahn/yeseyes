@@ -43,7 +43,6 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     public var qrstr : String = "."
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
-        
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CartListTableViewCell else { fatalError() }
         

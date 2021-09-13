@@ -8,26 +8,35 @@ import Foundation
 
 class Cart {
     
-    private(set) var items : [CartItem] = []
-    
-    //    enum CodingKeys: String, CodingKey {
-    //        case items
-    //    }
-    //
-    //    required init(from decoder: Decoder) throws {
-    //        let values = try decoder.container(keyedBy: CodingKeys.self)
-    //        items = try values.decode([CartItem].self, forKey: .items)
-    //    }
-    //    public func encode(to encoder: Encoder) throws {
-    //        let container = try encoder.container(keyedBy: CodingKeys.self)
-    //        try container.encode(items, forKey: .items)
-    //    }
+    // private(set) var items : [CartItem] = []
+    private(set) var items: [CartItem] {
+        get {
+            var storeItems: [CartItem]?
+            if let data = Foundation.UserDefaults.standard.value(forKey: "storeItems") as? Data {
+                storeItems = try? PropertyListDecoder().decode([CartItem].self, from: data)
+            }
+            return storeItems ?? []
+        }
+        set {
+            Foundation.UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey:"storeItems")
+        }
+    }
+//        enum CodingKeys: String, CodingKey {
+//            case items
+//        }
+//
+//        required init(from decoder: Decoder) throws {
+//            let values = try decoder.container(keyedBy: CodingKeys.self)
+//            items = try values.decode([CartItem].self, forKey: .items)
+//        }
+//        public func encode(to encoder: Encoder) throws {
+//            let container = try encoder.container(keyedBy: CodingKeys.self)
+//            try container.encode(items, forKey: .items)
+//        }
     
 }
 
 extension Cart {
-    
- 
     
     var totalQuantity : Int {
         get { return items.reduce(0) { value, item in
@@ -36,6 +45,10 @@ extension Cart {
         }
     }
     
+    func countItems() -> Int {
+        return items.count
+    }
+
     func updateCart(with product: CU1Model) {
         if !self.contains(product: product) {
             self.add(product: product)

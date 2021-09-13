@@ -7,11 +7,10 @@
 
 import Foundation
 
-class CartItem {
+class CartItem: Codable {
     
     var quantity : Int = 1
     var item : CU1Model
-    
     
     init(item: CU1Model) {
         self.item = item
