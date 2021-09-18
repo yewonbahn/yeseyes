@@ -32,6 +32,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     var cart: Cart? = nil
+    var qrstr: String = "123"
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -40,7 +41,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     func numberOfSections(in tableView: UITableView) -> Int {
         return cart?.items.count ?? 0
     }
-    public var qrstr : String = "."
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
 
@@ -55,9 +56,13 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             cell.countLabel.text = String(describing: cartItem.quantity)
             cell.quantity = cartItem.quantity
+            
+            // print(cartItem.item.title)
             qrstr.append(cartItem.item.title+cartItem.item.price+"\n")
         }
-        return cell}
+        
+        return cell
+    }
     
     var model = [CU1Model]()
     var newcart = Cart()
@@ -96,6 +101,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let QRCodeImage = generateQRCode(from:qrstr)
         self.QrView.image = QRCodeImage
         
+        print(qrstr)
    
     }
     

@@ -18,6 +18,7 @@ struct CuModel{
 
 class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var model = [[CuModel]]()
+    var storeText: String = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model[section].count
@@ -40,34 +41,34 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath.section == 0 && indexPath.row == 0{
+        if indexPath.section == 0 {
             if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-                CU1VC.text = String(indexPath.row)
+                CU1VC.text = storeText + String(indexPath.row)
                 self.navigationController?.pushViewController(CU1VC, animated: true)
             }
         }
         
-        if indexPath.section == 0 && indexPath.row == 1{
-            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-                CU1VC.text = String(indexPath.row)
-                self.navigationController?.pushViewController(CU1VC, animated: true)
-            }
-        }
-        
-        if indexPath.section == 0 && indexPath.row == 2{
-            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-                CU1VC.text = String(indexPath.row)
-                self.navigationController?.pushViewController(CU1VC, animated: true)
-            }
-        }
-        
-        if indexPath.section == 0 && indexPath.row == 3{
-            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
-                CU1VC.text = String(indexPath.row)
-                self.navigationController?.pushViewController(CU1VC, animated: true)
-            }
-        }
-        
+//        if indexPath.section == 0 && indexPath.row == 1{
+//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+//                CU1VC.text = String(indexPath.row)
+//                self.navigationController?.pushViewController(CU1VC, animated: true)
+//            }
+//        }
+//
+//        if indexPath.section == 0 && indexPath.row == 2{
+//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+//                CU1VC.text = String(indexPath.row)
+//                self.navigationController?.pushViewController(CU1VC, animated: true)
+//            }
+//        }
+//
+//        if indexPath.section == 0 && indexPath.row == 3{
+//            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
+//                CU1VC.text = String(indexPath.row)
+//                self.navigationController?.pushViewController(CU1VC, animated: true)
+//            }
+//        }
+//
 //        if indexPath.section == 0 && indexPath.row == 4{
 //            if let CU1VC = UIStoryboard(name: "CU1ViewController", bundle: nil).instantiateViewController(identifier: "CU1ViewController") as? CU1ViewController{
 //                CU1VC.text = String(indexPath.row)
@@ -102,14 +103,15 @@ class CUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         CUTableView.delegate = self
         CUTableView.dataSource = self
-        self.title = "[CU] 할인 상품"
+        self.title = "할인 상품"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
         model.append([
                 CuModel(mainTitle: "음료"),
                 CuModel(mainTitle: "과자"),
                 CuModel(mainTitle: "아이스크림"),
-                CuModel(mainTitle: "식품")
+                CuModel(mainTitle: "식품"),
+                CuModel(mainTitle: "생활용품")
         ])
     }
     

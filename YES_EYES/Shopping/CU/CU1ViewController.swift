@@ -18,6 +18,7 @@ struct CU1Model: Codable, Equatable {
     var title = ""
     var price = ""
     var info = ""
+    var sale = ""
 }
 
 class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -117,8 +118,11 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         popUp.modalTransitionStyle = .crossDissolve
         
         let temp = popUp as? PopupViewController
-        temp?.strText = model[indexPath.row].info
+        let data = model[indexPath.row].info
         
+        if data != "" { temp?.strText = data}
+        else { temp?.strText = model[indexPath.row].sale}
+
         self.present(popUp, animated: true, completion: nil)
     }
 
@@ -172,20 +176,42 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         CU1TableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell") // ItemCell xib 등록
         cartButton.layer.cornerRadius = cartButton.frame.height / 2
         cartButton.addTarget(self, action: #selector(didTabCartButton), for: .touchUpInside)
-        self.title = "CU"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
         let ref: DatabaseReference! = Database.database().reference()
         // var handle: DatabaseHandle!
         
         var route: String = ""
+        var store: String = ""
         
-        if text == "0" { route = "drink" }
-        else if text == "1" { route = "snack" }
-        else if text == "2" { route = "icecream" }
-        else if text == "3" { route = "food" }
+        if text[text.startIndex] == "0" {
+            self.title = "CU"
+            store = "cu"
+        }
+        else if text[text.startIndex] == "1" {
+            self.title = "GS25"
+            store = "gs25"
+        }
+        else if text[text.startIndex] == "2" {
+            self.title = "이마트24"
+            store = "emart24"
+        }
+        else if text[text.startIndex] == "3" {
+            self.title = "세븐일레븐"
+            store = "7eleven"
+        }
+        else if text[text.startIndex] == "4" {
+            self.title = "미니스톱"
+            store = "ministop"
+        }
         
-        ref.child("cu").child(route).observeSingleEvent(of: .value) { (snapshot) in
+        if text[text.index(before: text.endIndex)] == "0" { route = "drink" }
+        else if text[text.index(before: text.endIndex)] == "1" { route = "snack" }
+        else if text[text.index(before: text.endIndex)] == "2" { route = "icecream" }
+        else if text[text.index(before: text.endIndex)] == "3" { route = "food" }
+        else if text[text.index(before: text.endIndex)] == "4" { route = "convenience" }
+        
+        ref.child(store).child(route).observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 
@@ -194,8 +220,9 @@ class CU1ViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 let title = item["title"] ?? ""
                 let price = item["price"] ?? ""
                 let info = item["info"] ?? ""
+                let sale = item["EventName"] ?? ""
                 
-                self.model.append(CU1Model(title: title as! String, price: price as! String, info: info as! String))
+                self.model.append(CU1Model(title: title as! String, price: price as! String, info: info as! String, sale: sale as! String))
                 self.product[title as! String] = info as? String
             }
             
