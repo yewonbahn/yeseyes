@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1D53BAF13728699B5BD81F32 /* Pods_YES_EYESTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82665E99ECE71781567363FE /* Pods_YES_EYESTests.framework */; };
+		73415A8926FDC26C006E1BBB /* CapturePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8626FDC123006E1BBB /* CapturePreviewView.swift */; };
+		73415A8C26FDC278006E1BBB /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8426FDC11F006E1BBB /* VideoCapture.swift */; };
+		73415A8D26FDC27C006E1BBB /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8526FDC123006E1BBB /* Inceptionv3.mlmodel */; };
+		73415A8E26FDC2FA006E1BBB /* AIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8326FDC11F006E1BBB /* AIViewController.swift */; };
+		73415A8F26FDC2FE006E1BBB /* AIViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73415A8226FDC11F006E1BBB /* AIViewController.storyboard */; };
+		73415A9026FDC334006E1BBB /* CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8726FDC123006E1BBB /* CIImage.swift */; };
 		73963C2926FD60E800D1729D /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73963C2826FD60E800D1729D /* CoreML.framework */; };
 		73963C2B26FD60FA00D1729D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73963C2A26FD60FA00D1729D /* CoreVideo.framework */; };
 		73963C2D26FD610200D1729D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73963C2C26FD610200D1729D /* AVFoundation.framework */; };
-		73963C3426FD612600D1729D /* CapturePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73963C2E26FD612500D1729D /* CapturePreviewView.swift */; };
-		73963C3526FD612600D1729D /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73963C2F26FD612500D1729D /* VideoCapture.swift */; };
-		73963C3626FD612600D1729D /* CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73963C3026FD612500D1729D /* CIImage.swift */; };
-		73963C3726FD612600D1729D /* AIViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73963C3126FD612600D1729D /* AIViewController.storyboard */; };
-		73963C3826FD612600D1729D /* AIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73963C3226FD612600D1729D /* AIViewController.swift */; };
-		73963C3926FD612600D1729D /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 73963C3326FD612600D1729D /* Inceptionv3.mlmodel */; };
 		739D9CED26B7EEEA0076D382 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D9CEB26B7EEEA0076D382 /* ItemCell.swift */; };
 		739D9CEE26B7EEEA0076D382 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739D9CEC26B7EEEA0076D382 /* ItemCell.xib */; };
 		73B9EB7526BAAC1200333C60 /* InfoCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9EB7326BAAC1200333C60 /* InfoCellViewController.swift */; };
@@ -229,15 +229,15 @@
 		73415A7E26FD6429006E1BBB /* FirebaseRemoteConfig */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FirebaseRemoteConfig; sourceTree = "<group>"; };
 		73415A7F26FD6429006E1BBB /* nanopb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nanopb; sourceTree = "<group>"; };
 		73415A8026FD6429006E1BBB /* GTMSessionFetcher */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GTMSessionFetcher; sourceTree = "<group>"; };
+		73415A8226FDC11F006E1BBB /* AIViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AIViewController.storyboard; sourceTree = "<group>"; };
+		73415A8326FDC11F006E1BBB /* AIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIViewController.swift; sourceTree = "<group>"; };
+		73415A8426FDC11F006E1BBB /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		73415A8526FDC123006E1BBB /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		73415A8626FDC123006E1BBB /* CapturePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePreviewView.swift; sourceTree = "<group>"; };
+		73415A8726FDC123006E1BBB /* CIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImage.swift; sourceTree = "<group>"; };
 		73963C2826FD60E800D1729D /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 		73963C2A26FD60FA00D1729D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		73963C2C26FD610200D1729D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		73963C2E26FD612500D1729D /* CapturePreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CapturePreviewView.swift; path = "../../../project/YES-EYES-merge/YES_EYES/Detection/CapturePreviewView.swift"; sourceTree = "<group>"; };
-		73963C2F26FD612500D1729D /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCapture.swift; path = "../../../project/YES-EYES-merge/YES_EYES/Detection/VideoCapture.swift"; sourceTree = "<group>"; };
-		73963C3026FD612500D1729D /* CIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CIImage.swift; path = "../../../project/YES-EYES-merge/YES_EYES/Detection/CIImage.swift"; sourceTree = "<group>"; };
-		73963C3126FD612600D1729D /* AIViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AIViewController.storyboard; path = "../../../project/YES-EYES-merge/YES_EYES/Detection/AIViewController.storyboard"; sourceTree = "<group>"; };
-		73963C3226FD612600D1729D /* AIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIViewController.swift; path = "../../../project/YES-EYES-merge/YES_EYES/Detection/AIViewController.swift"; sourceTree = "<group>"; };
-		73963C3326FD612600D1729D /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = "../../../project/YES-EYES-merge/YES_EYES/Detection/Inceptionv3.mlmodel"; sourceTree = "<group>"; };
 		739D9CEB26B7EEEA0076D382 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		739D9CEC26B7EEEA0076D382 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		73B9EB7326BAAC1200333C60 /* InfoCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +363,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		73415A8826FDC1B5006E1BBB /* Detection */ = {
+			isa = PBXGroup;
+			children = (
+				73415A8226FDC11F006E1BBB /* AIViewController.storyboard */,
+				73415A8326FDC11F006E1BBB /* AIViewController.swift */,
+				73415A8626FDC123006E1BBB /* CapturePreviewView.swift */,
+				73415A8726FDC123006E1BBB /* CIImage.swift */,
+				73415A8526FDC123006E1BBB /* Inceptionv3.mlmodel */,
+				73415A8426FDC11F006E1BBB /* VideoCapture.swift */,
+			);
+			path = Detection;
+			sourceTree = "<group>";
+		};
 		CD713A7C840566510E6EF576 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,19 +454,6 @@
 			path = Shopping;
 			sourceTree = "<group>";
 		};
-		F51E5E8726BBD85B000B0AE6 /* Detection */ = {
-			isa = PBXGroup;
-			children = (
-				73963C3126FD612600D1729D /* AIViewController.storyboard */,
-				73963C3226FD612600D1729D /* AIViewController.swift */,
-				73963C2E26FD612500D1729D /* CapturePreviewView.swift */,
-				73963C3026FD612500D1729D /* CIImage.swift */,
-				73963C3326FD612600D1729D /* Inceptionv3.mlmodel */,
-				73963C2F26FD612500D1729D /* VideoCapture.swift */,
-			);
-			path = Detection;
-			sourceTree = "<group>";
-		};
 		F51E5E8826BBD886000B0AE6 /* Help */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,8 +502,8 @@
 				F526784C26AC3FAD005152C4 /* MenuCell.swift */,
 				F526785026AC43AD005152C4 /* SettingModel.swift */,
 				F51E5E8526BBD7E4000B0AE6 /* QR-wishlist */,
+				73415A8826FDC1B5006E1BBB /* Detection */,
 				F51E5E8626BBD805000B0AE6 /* Shopping */,
-				F51E5E8726BBD85B000B0AE6 /* Detection */,
 				F51E5E8826BBD886000B0AE6 /* Help */,
 				F526782126AC3949005152C4 /* Assets.xcassets */,
 				F526782626AC3949005152C4 /* Info.plist */,
@@ -789,7 +789,7 @@
 				F519FD4526B2F58300660432 /* CUViewController.storyboard in Resources */,
 				F526784F26AC3FAD005152C4 /* MenuCell.xib in Resources */,
 				84A530DA26B16EA00002B7F1 /* HelpViewController3.storyboard in Resources */,
-				73963C3726FD612600D1729D /* AIViewController.storyboard in Resources */,
+				73415A8F26FDC2FE006E1BBB /* AIViewController.storyboard in Resources */,
 				F526782026AC3947005152C4 /* Main.storyboard in Resources */,
 				F51B8CB426B310D6005A13CF /* CU1ViewController.storyboard in Resources */,
 			);
@@ -926,20 +926,20 @@
 				F526785126AC43AD005152C4 /* SettingModel.swift in Sources */,
 				F51B8CB226B310C8005A13CF /* CU1ViewController.swift in Sources */,
 				84A530CD26B1675A0002B7F1 /* HelpViewController3.swift in Sources */,
-				73963C3626FD612600D1729D /* CIImage.swift in Sources */,
 				739D9CED26B7EEEA0076D382 /* ItemCell.swift in Sources */,
 				F5E2AF4C26BB0F8D00C9D815 /* CUSearchViewController.swift in Sources */,
 				F526781D26AC3947005152C4 /* ViewController.swift in Sources */,
 				84979FF026CD360A00F0ED0F /* Cart.swift in Sources */,
 				F526781926AC3947005152C4 /* AppDelegate.swift in Sources */,
 				84979FE826CD35C200F0ED0F /* CartItem.swift in Sources */,
-				73963C3826FD612600D1729D /* AIViewController.swift in Sources */,
-				73963C3926FD612600D1729D /* Inceptionv3.mlmodel in Sources */,
+				73415A9026FDC334006E1BBB /* CIImage.swift in Sources */,
+				73415A8D26FDC27C006E1BBB /* Inceptionv3.mlmodel in Sources */,
+				73415A8E26FDC2FA006E1BBB /* AIViewController.swift in Sources */,
 				F526784E26AC3FAD005152C4 /* MenuCell.swift in Sources */,
-				73963C3426FD612600D1729D /* CapturePreviewView.swift in Sources */,
+				73415A8926FDC26C006E1BBB /* CapturePreviewView.swift in Sources */,
 				F519FD4126B2F49700660432 /* HelpViewController2.swift in Sources */,
 				F526781B26AC3947005152C4 /* SceneDelegate.swift in Sources */,
-				73963C3526FD612600D1729D /* VideoCapture.swift in Sources */,
+				73415A8C26FDC278006E1BBB /* VideoCapture.swift in Sources */,
 				84B85D1B26D1411C00B18B6D /* CartListTableViewCell.swift in Sources */,
 				F519FD3F26B2F46F00660432 /* HelpViewController.swift in Sources */,
 				F505379826AD93590012085F /* QRViewController.swift in Sources */,
