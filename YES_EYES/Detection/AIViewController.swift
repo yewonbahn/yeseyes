@@ -9,7 +9,7 @@ class AIViewController: UIViewController {
     
     let videoCapture : VideoCapture = VideoCapture()
     let context = CIContext()
-    let model: Inceptionv3 = try! Inceptionv3(configuration: .init())
+    let model: MyImageClassifier = try! MyImageClassifier(configuration: .init())
     
     override func viewDidLoad() {
         super.viewDidLoad()

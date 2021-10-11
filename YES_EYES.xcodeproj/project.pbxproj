@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D53BAF13728699B5BD81F32 /* Pods_YES_EYESTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82665E99ECE71781567363FE /* Pods_YES_EYESTests.framework */; };
+		5053433B27146D83006A1869 /* MyImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5053432527146D83006A1869 /* MyImageClassifier.mlmodel */; };
 		73415A8926FDC26C006E1BBB /* CapturePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8626FDC123006E1BBB /* CapturePreviewView.swift */; };
 		73415A8C26FDC278006E1BBB /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8426FDC11F006E1BBB /* VideoCapture.swift */; };
 		73415A8D26FDC27C006E1BBB /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 73415A8526FDC123006E1BBB /* Inceptionv3.mlmodel */; };
@@ -206,6 +207,7 @@
 
 /* Begin PBXFileReference section */
 		1B2736BE16154B5A4F3B7039 /* Pods-YES_EYES-YES_EYESUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YES_EYES-YES_EYESUITests.release.xcconfig"; path = "Target Support Files/Pods-YES_EYES-YES_EYESUITests/Pods-YES_EYES-YES_EYESUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5053432527146D83006A1869 /* MyImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyImageClassifier.mlmodel; sourceTree = "<group>"; };
 		73415A2F26FD6427006E1BBB /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
 		73415A6B26FD6427006E1BBB /* PromisesObjC */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PromisesObjC; sourceTree = "<group>"; };
 		73415A6C26FD6427006E1BBB /* FirebaseCoreDiagnostics */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FirebaseCoreDiagnostics; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				73415A8326FDC11F006E1BBB /* AIViewController.swift */,
 				73415A8626FDC123006E1BBB /* CapturePreviewView.swift */,
 				73415A8726FDC123006E1BBB /* CIImage.swift */,
+				5053432527146D83006A1869 /* MyImageClassifier.mlmodel */,
 				73415A8526FDC123006E1BBB /* Inceptionv3.mlmodel */,
 				73415A8426FDC11F006E1BBB /* VideoCapture.swift */,
 			);
@@ -932,6 +935,7 @@
 				84979FF026CD360A00F0ED0F /* Cart.swift in Sources */,
 				F526781926AC3947005152C4 /* AppDelegate.swift in Sources */,
 				84979FE826CD35C200F0ED0F /* CartItem.swift in Sources */,
+				5053433B27146D83006A1869 /* MyImageClassifier.mlmodel in Sources */,
 				73415A9026FDC334006E1BBB /* CIImage.swift in Sources */,
 				73415A8D26FDC27C006E1BBB /* Inceptionv3.mlmodel in Sources */,
 				73415A8E26FDC2FA006E1BBB /* AIViewController.swift in Sources */,
