@@ -41,13 +41,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     var cart: Cart? = nil
-<<<<<<< HEAD
-   
-=======
-    var model = [CU1Model]()
-    var qrstr: String = "123"
 
->>>>>>> 53c5478cc6a5863eaaf3cf8991a17c8cd281745b
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cart?.items.count ?? 0
     }
@@ -111,7 +105,6 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return qrFilter?.outputImage
     }
     var model = [CU1Model]()
-=======
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
@@ -122,7 +115,6 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
 
->>>>>>> 53c5478cc6a5863eaaf3cf8991a17c8cd281745b
     var newcart = Cart()
     
     @IBOutlet weak var InputField: UITextField!
