@@ -42,6 +42,11 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var cart: Cart? = nil
 
+
+    var model = [CU1Model]()
+
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cart?.items.count ?? 0
     }
@@ -104,7 +109,8 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
      
         return qrFilter?.outputImage
     }
-    var model = [CU1Model]()
+
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
@@ -114,6 +120,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             
         }
     }
+
 
     var newcart = Cart()
     
