@@ -23,6 +23,15 @@ struct QRModel{
 }
 
 class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartItemDelegate {
+    public var qrstr: String = " "
+    
+    @IBOutlet weak var ImageView: UIImageView!
+   
+    
+    
+    
+    
+    
 
     func updateCartItem(cell: CartListTableViewCell, quantity: Int) {
         guard let indexPath = QRTableView.indexPath(for: cell) else { return }
@@ -32,8 +41,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     var cart: Cart? = nil
-    var qrstr: String = "123"
-
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -60,10 +68,41 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             // print(cartItem.item.title)
             qrstr.append(cartItem.item.title+cartItem.item.price+"\n")
         }
-        
+        self.refreshQRCode()
         return cell
     }
     
+    func refreshQRCode() {
+        let text:String = qrstr;
+  
+        // Generate the image
+        guard let qrCode:CIImage = self.createQRCodeForString(text) else {
+            print("Failed to generate QRCode")
+            self.ImageView.image = nil
+            return
+        }
+        
+        // Rescale to fit the view (otherwise it is only something like 100px)
+        let viewWidth = self.ImageView.bounds.size.width;
+        let scale = viewWidth/qrCode.extent.size.width;
+        let scaledImage = qrCode.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
+        
+        // Display
+        self.ImageView.image = UIImage(ciImage: scaledImage)
+    }
+    func createQRCodeForString(_ text: String) -> CIImage?{
+        let data = text.data(using: .utf8)
+        
+        let qrFilter = CIFilter(name: "CIQRCodeGenerator")
+        // Input text
+        qrFilter?.setValue(data, forKey: "inputMessage")
+        // Error correction
+        let values = ["L", "M", "Q", "H"]
+        // Trick to limit the result to the bounds (0, array.maxIndex) - max(_MIN_, min(_value_, _MAX_))
+
+     
+        return qrFilter?.outputImage
+    }
     var model = [CU1Model]()
     var newcart = Cart()
     
@@ -97,28 +136,14 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.QRTableView.reloadData()
         // "Hello,world!" 가 Qr 로 형성되어있음
-        
-        let QRCodeImage = generateQRCode(from:qrstr)
-        self.QrView.image = QRCodeImage
+        self.refreshQRCode()
+//        let QRCodeImage = generateQRCode(from:qrstr)
+//        self.QrView.image = QRCodeImage
         
         print(qrstr)
    
     }
     
-    func generateQRCode(from string: String) -> UIImage? {
-        let data = string.data(using: String.Encoding.ascii)
-      
-        if let QRFilter = CIFilter(name: "CIQRCodeGenerator") {
-            QRFilter.setValue(data, forKey: "inputMessage")
-            guard let QRImage = QRFilter.outputImage else { return nil }
-            
-            let scaleUp = CGAffineTransform(scaleX: 10.0, y: 10.0)
-            let scaledQR = QRImage.transformed(by: scaleUp)
-            
-            return UIImage(ciImage: scaledQR)
-        }
-      
-        return nil
-    }
+
  
 }

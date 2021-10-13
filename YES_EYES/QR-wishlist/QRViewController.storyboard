@@ -163,6 +163,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ImageView" destination="HeI-HC-dvH" id="upp-16-LGv"/>
                         <outlet property="InputField" destination="0Ay-ie-bi8" id="RVY-Qh-qnY"/>
                         <outlet property="QRTableView" destination="HNP-5x-KJE" id="YCM-3Q-ti3"/>
                         <outlet property="QrView" destination="HeI-HC-dvH" id="CId-d2-SDz"/>
