@@ -58,7 +58,6 @@ extension Cart {
     }
     
     func updateCart() {
-        
         for item in self.items {
             if item.quantity == 0 {
                 updateCart(with: item.item)
@@ -77,7 +76,7 @@ extension Cart {
     }
     
     func remove(product: CU1Model) {
-        guard let index = items.index(where: { $0.item == product }) else { return}
+        guard let index = items.index(where: { $0.item == product }) else { return }
         items.remove(at: index)
     }
     
