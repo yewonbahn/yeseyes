@@ -32,14 +32,15 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     var cart: Cart? = nil
+    var model = [CU1Model]()
     var qrstr: String = "123"
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return cart?.items.count ?? 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return cart?.items.count ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
@@ -47,8 +48,8 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CartListTableViewCell else { fatalError() }
         
-        if let cartItem = cart?.items[indexPath.section]{
-            
+        if let cartItem = cart?.items[indexPath.row]{
+
             cell.delegate = self as CartItemDelegate
      
             cell.itemTitle.text = cartItem.item.title
@@ -64,11 +65,19 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-    var model = [CU1Model]()
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            cart?.updateCart(with: cart!.items[indexPath.row].getItem())
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            
+        }
+    }
+
     var newcart = Cart()
     
     @IBOutlet weak var InputField: UITextField!
-    
     @IBOutlet weak var QrView: UIImageView!
     @IBOutlet weak var QRTableView: UITableView!
     

@@ -15,4 +15,8 @@ class CartItem: Codable {
     init(item: CU1Model) {
         self.item = item
     }
+    
+    func getItem() -> CU1Model {
+        return item;
+    }
 }

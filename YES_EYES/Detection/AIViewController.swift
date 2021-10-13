@@ -16,7 +16,6 @@ class AIViewController: UIViewController {
         
         self.videoCapture.delegate = self
 
-        
         if self.videoCapture.initCamera(){
             (self.previewView.layer as! AVCaptureVideoPreviewLayer).session =
                 self.videoCapture.captureSession
