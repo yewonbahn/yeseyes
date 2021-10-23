@@ -14,7 +14,7 @@ class MenuCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         menuTitle.textColor = .black
-        menuTitle.font = UIFont.systemFont(ofSize : 35)
+        menuTitle.font = UIFont(name: "NanumSquareOTFB", size: 30)
         // Initialization code
     }
 

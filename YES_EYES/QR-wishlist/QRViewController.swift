@@ -57,7 +57,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
-
+    
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CartListTableViewCell else { fatalError() }
         
         if let cartItem = cart?.items[indexPath.row]{
@@ -73,12 +73,14 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             // print(cartItem.item.title)
             qrstr.append(cartItem.item.title+cartItem.item.price+"\n")
         }
+        print(qrstr)
         self.refreshQRCode()
         return cell
     }
     
 
     func refreshQRCode() {
+ 
         let text:String = qrstr;
   
         // Generate the image
@@ -116,8 +118,18 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         if editingStyle == .delete {
             cart?.updateCart(with: cart!.items[indexPath.row].getItem())
             tableView.deleteRows(at: [indexPath], with: .fade)
+            qrstr=" ";
+            self.QRTableView.reloadData()
+           
+            // "Hello,world!" 가 Qr 로 형성되어있음
+           
+        
         } else if editingStyle == .insert {
-            
+           
+            self.QRTableView.reloadData()
+       
+            // "Hello,world!" 가 Qr 로 형성되어있음
+          
         }
     }
 
@@ -141,7 +153,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cart?.updateCart(with: item)
         }
                 
-        print(item)
+        qrstr=" ";
         QRTableView.reloadData()
     }
     

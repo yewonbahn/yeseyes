@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         settingTableView.backgroundColor = UIColor(displayP3Red: 228/255, green: 231/255, blue: 246/255, alpha:0)
         //ViewController -> add Cell
         settingTableView.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")
-        title = "MAIN"
+        title = "YES EYES"
         navigationController?.navigationBar.prefersLargeTitles = true
 //        self.view.backgroundColor
         makeData()
