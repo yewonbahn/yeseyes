@@ -23,7 +23,7 @@ struct QRModel{
 }
 
 class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartItemDelegate {
-    public var qrstr: String = " "
+    public var qrstr: String = ""
     
     @IBOutlet weak var ImageView: UIImageView!
    
