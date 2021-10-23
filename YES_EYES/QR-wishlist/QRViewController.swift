@@ -23,7 +23,7 @@ struct QRModel{
 }
 
 class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartItemDelegate {
-    public var qrstr: String = ""
+    public var qrstr: String = "https://yeseyes.web.app/?"
     
     @IBOutlet weak var ImageView: UIImageView!
    
@@ -71,7 +71,8 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.quantity = cartItem.quantity
             
             // print(cartItem.item.title)
-            qrstr.append(cartItem.item.title+cartItem.item.price+"\n")
+//            qrstr.append(cartItem.item.title+cartItem.item.price+"&")
+            qrstr.append(cartItem.item.title+"&")
         }
         print(qrstr)
         self.refreshQRCode()
@@ -118,7 +119,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         if editingStyle == .delete {
             cart?.updateCart(with: cart!.items[indexPath.row].getItem())
             tableView.deleteRows(at: [indexPath], with: .fade)
-            qrstr=" ";
+            qrstr="https://yeseyes.web.app/";
             self.QRTableView.reloadData()
            
             // "Hello,world!" 가 Qr 로 형성되어있음
@@ -153,7 +154,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cart?.updateCart(with: item)
         }
                 
-        qrstr=" ";
+        qrstr="https://yeseyes.web.app/";
         QRTableView.reloadData()
     }
     
