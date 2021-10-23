@@ -119,7 +119,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         if editingStyle == .delete {
             cart?.updateCart(with: cart!.items[indexPath.row].getItem())
             tableView.deleteRows(at: [indexPath], with: .fade)
-            qrstr="https://yeseyes.web.app/";
+            qrstr="https://yeseyes.web.app/?";
             self.QRTableView.reloadData()
            
             // "Hello,world!" 가 Qr 로 형성되어있음
@@ -154,7 +154,7 @@ class QRViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cart?.updateCart(with: item)
         }
                 
-        qrstr="https://yeseyes.web.app/";
+        qrstr="https://yeseyes.web.app/?";
         QRTableView.reloadData()
     }
     
